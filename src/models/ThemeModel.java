@@ -2,8 +2,6 @@ package models;
 
 import java.util.List;
 
-import topic_classes.TopicModel;
-
 public class ThemeModel {
 	private String description;
 	private String title;

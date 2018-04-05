@@ -6,8 +6,6 @@
  * @date 3/26/2018
  */
 
-package RefMiesterModels;
-
 import java.util.List;
 import java.util.ArrayList;
 
