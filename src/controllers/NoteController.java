@@ -118,7 +118,7 @@ public class NoteController {
             return false;
         }
         
-        noteView.printNote(note);
+        //noteView.printNote(note);
         
         return true;
     }
@@ -135,7 +135,7 @@ public class NoteController {
             return false;
         }
         
-        noteView.printNotes(noteList);
+        //noteView.printNotes(noteList);
         
         return true;
     }

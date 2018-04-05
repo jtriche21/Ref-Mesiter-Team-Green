@@ -2,7 +2,7 @@ package views.cli;
 
 import java.util.List;
 
-import models.TopicModel;
+import models.Topic;
 import models.Reference;
 
 /**
@@ -16,8 +16,8 @@ import models.Reference;
  * @param List<Reference> referenceList - The list of References associated with this Theme
  */
 public class ThemeView {
-	public void printThemeInformation(String description, String title, TopicModel owner,
-											TopicModel topic, List<Reference> referenceList) {
+	public void printThemeInformation(String description, String title, Topic owner,
+											Topic topic, List<Reference> referenceList) {
 		System.out.println("Theme: " + title + " is under " + owner);
 		System.out.println("Description: " + description);
 		System.out.println("Current references: " + referenceList.toString());

@@ -2,17 +2,16 @@ package controllers;
 
 import java.util.List;
 
-import models.LibraryModel;
-import models.ThemeModel;
-import models.TopicModel;
-import views.cli.CLIViewInterface;
+import models.Library;
+import models.Theme;
+import models.Topic;
 import views.cli.TopicView;
 
-public class TopicController implements CLIViewInterface {
-	private TopicModel model;
+public class TopicController {
+	private Topic model;
 	private TopicView view;
 	
-	public TopicController(TopicModel model) {
+	public TopicController(Topic model) {
 		this.model = model;
 	}
 	
@@ -22,22 +21,22 @@ public class TopicController implements CLIViewInterface {
 	public void setTopicTitle(String title) {
 		model.setTitle(title);
 	}
-	public LibraryModel getTopicOwner() {
+	public Library getTopicOwner() {
 		return model.getOwner();
 	}
-	public void setTopicOwner(LibraryModel owner) {
+	public void setTopicOwner(Library owner) {
 		model.setOwner(owner);
 	}
-	public ThemeModel getTopicDescription() {
+	public Theme getTopicDescription() {
 		return model.getDescription();
 	}
-	public void setTopicDescription(ThemeModel description) {
+	public void setTopicDescription(Theme description) {
 		model.setDescription(description);
 	}
-	public List<ThemeModel> getTopicThemeList(){
+	public List<Theme> getTopicThemeList(){
 		return model.getThemeList();
 	}
-	public void setTopicThemeList(List<ThemeModel> themeList) {
+	public void setTopicThemeList(List<Theme> themeList) {
 		model.setThemeList(themeList);
 	}
 	
@@ -46,7 +45,7 @@ public class TopicController implements CLIViewInterface {
 	 * @param theme - The theme object that will be added
 	 * @return true if the theme passed in exist, "Why would it?"
 	 */
-	public boolean addTheme(ThemeModel theme) {
+	public boolean addTheme(Theme theme) {
 		if(getTopicThemeList().add(theme)) {
 			return true;
 		}else {
@@ -59,7 +58,7 @@ public class TopicController implements CLIViewInterface {
 	 * @param theme - The Theme object that will be removed
 	 * @return true if the Theme object was in the current list of Themes
 	 */
-	public boolean removeTheme(ThemeModel theme) {
+	public boolean removeTheme(Theme theme) {
 		if(getTopicThemeList().remove(theme)) {
 			return true;
 		}else {

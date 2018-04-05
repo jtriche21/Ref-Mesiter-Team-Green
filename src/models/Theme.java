@@ -2,11 +2,11 @@ package models;
 
 import java.util.List;
 
-public class ThemeModel {
+public class Theme {
 	private String description;
 	private String title;
-	private TopicModel owner;
-	private TopicModel topic;
+	private Topic owner;
+	private Topic topic;
 	private List<Reference> referenceList;
 	
 	public String getDescription() {
@@ -21,16 +21,16 @@ public class ThemeModel {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public TopicModel getOwner() {
+	public Topic getOwner() {
 		return owner;
 	}
-	public void setOwner(TopicModel owner) {
+	public void setOwner(Topic owner) {
 		this.owner = owner;
 	}
-	public TopicModel getTopic() {
+	public Topic getTopic() {
 		return topic;
 	}
-	public void setTopic(TopicModel topic) {
+	public void setTopic(Topic topic) {
 		this.topic = topic;
 	}
 	public List<Reference> getReferenceList() {

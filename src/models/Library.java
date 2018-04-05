@@ -8,13 +8,15 @@ package models;
 
 import java.util.List;
 
-public class LibraryModel implements IF_Library{
-    private List<TopicModel> topicList;
+import models.interfaces.IF_Library;
+
+public class Library implements IF_Library{
+    private List<Topic> topicList;
     private String libraryTitle;
     private String libraryDescription;
-    private TopicModel description;
+    private Topic description;
     
-    public LibraryModel(List<TopicModel> tl, String lt, String ld, TopicModel desc) {
+    public Library(List<Topic> tl, String lt, String ld, Topic desc) {
     	createLibrary(tl, lt, ld, desc);
     }
     
@@ -34,17 +36,17 @@ public class LibraryModel implements IF_Library{
         return this.libraryDescription;
     }
 
-    public void setTopicList(List<TopicModel> topicList){
+    public void setTopicList(List<Topic> topicList){
         this.topicList = topicList;
     }
 
-    public List<TopicModel> getTopicList(){
+    public List<Topic> getTopicList(){
         return this.topicList;
     }
 
 	@Override
-	public void createLibrary(List<TopicModel> topicList, String libraryTitle, String libraryDescription,
-			TopicModel description) {
+	public void createLibrary(List<Topic> topicList, String libraryTitle, String libraryDescription,
+			Topic description) {
 		this.topicList = topicList;
 		this.libraryTitle = libraryTitle;
 		this.libraryDescription = libraryDescription;

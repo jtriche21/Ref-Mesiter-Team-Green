@@ -1,16 +1,16 @@
 package controllers;
 
 import java.util.List;
-import models.ThemeModel;
-import models.TopicModel;
+import models.Theme;
+import models.Topic;
 import views.cli.ThemeView;
 import models.Reference;
 
 public class ThemeController {
-	ThemeModel model;
+	Theme model;
 	ThemeView view;
 	
-	public ThemeController(ThemeModel model, ThemeView view) {
+	public ThemeController(Theme model, ThemeView view) {
 		this.model = model;
 		this.view = view;
 	}
@@ -27,16 +27,16 @@ public class ThemeController {
 	public void setThemeDescription(String description) {
 		model.setDescription(description);
 	}
-	public TopicModel getThemeTopic() {
+	public Topic getThemeTopic() {
 		return model.getTopic();
 	}
-	public void setThemeTopic(TopicModel topic) {
+	public void setThemeTopic(Topic topic) {
 		model.setTopic(topic);
 	}
-	public TopicModel getThemeOwner() {
+	public Topic getThemeOwner() {
 		return model.getOwner();
 	}
-	public void setThemeOwner(TopicModel owner) {
+	public void setThemeOwner(Topic owner) {
 		model.setOwner(owner);
 	}
 	public List<Reference> getThemeReferenceList() {

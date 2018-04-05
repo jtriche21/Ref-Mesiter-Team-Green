@@ -1,7 +1,9 @@
 package views.cli;
 
 import java.util.ArrayList;
+import views.IF_NoteView;
 import controllers.NoteController;
+import models.Note;
 
 //TODO Use controller instead of model
 
@@ -11,7 +13,7 @@ import controllers.NoteController;
  * @author Nick Ruby
  * @version 3/25/18
  */
-public class NoteView implements CLIViewInterface{
+public class NoteView implements IF_NoteView{
     
     /**
      * Prints out one Note.

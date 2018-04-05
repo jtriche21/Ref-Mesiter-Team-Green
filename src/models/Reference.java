@@ -24,7 +24,7 @@ public class Reference {
     private List<Idea> ideaList;
     private List<ArgumentRating> argumentList;
     private List<Note> noteList;
-    private ThemeModel owner;
+    private Theme owner;
 
     /**
      * Creates a reference instance from an array of authors, the source title,
@@ -35,7 +35,7 @@ public class Reference {
      * @param publicationDate When the reference was published
      * @param owner The theme object that this reference instance is a member of
      */
-    public Reference(List<String> authors, String sourceTitle, String publicationDate, ThemeModel owner) {
+    public Reference(List<String> authors, String sourceTitle, String publicationDate, Theme owner) {
         this.authors = authors;
         this.sourceTitle = sourceTitle;
         this.publicationDate = publicationDate;
@@ -56,7 +56,7 @@ public class Reference {
      *
      * @param owner The Theme object that this reference instance is a member of
      */
-    public Reference(ThemeModel owner) {
+    public Reference(Theme owner) {
         this.authors = new ArrayList<String>();
         this.sourceTitle = "";
         this.publicationDate = "";
@@ -284,7 +284,7 @@ public class Reference {
      *
      * @return The owning theme
      */
-    public ThemeModel getOwner() {
+    public Theme getOwner() {
         return owner;
     }
 
@@ -293,7 +293,7 @@ public class Reference {
      *
      * @param owner the new owning theme
      */
-    public void setOwner(ThemeModel owner) {
+    public void setOwner(Theme owner) {
         this.owner = owner;
     }
 

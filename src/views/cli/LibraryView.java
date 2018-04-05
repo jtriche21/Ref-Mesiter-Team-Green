@@ -11,18 +11,20 @@
 package views.cli;
 
 import java.util.List;
-import models.TopicModel;
+import views.IF_LibraryView;
 import controllers.TopicController;
 
-public class LibraryView implements CLIViewInterface{
+public class LibraryView implements IF_LibraryView {
 	
 	//TODO Loosely couple the view from the model using the controller
 	//TODO Make command line capable
-    public void veiwLibrary(String libraryTitle, String LibraryDescription,
-                            List<TopicModel> topicList) {
+    
+	/*public void veiwLibrary(String libraryTitle, String LibraryDescription,
+                            List<Topic> topicList) {
         System.out.println("Library: " + libraryTitle);
         System.out.println("Library Description: " + LibraryDescription);
         System.out.println("Current topic: " + topicList.toString());
         
-    }
+    } 
+    */
 }
