@@ -8,13 +8,16 @@
  * @param List<TopicModel> topicList - The list of Topics associated with this
  * library. 
  */
-package views;
+package views.cli;
 
 import java.util.List;
-
 import models.TopicModel;
+import controllers.TopicController;
 
-public class LibraryView{
+public class LibraryView implements CLIViewInterface{
+	
+	//TODO Loosely couple the view from the model using the controller
+	//TODO Make command line capable
     public void veiwLibrary(String libraryTitle, String LibraryDescription,
                             List<TopicModel> topicList) {
         System.out.println("Library: " + libraryTitle);

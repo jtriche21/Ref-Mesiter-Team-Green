@@ -5,9 +5,10 @@ import java.util.List;
 import models.LibraryModel;
 import models.ThemeModel;
 import models.TopicModel;
-import views.TopicView;
+import views.cli.CLIViewInterface;
+import views.cli.TopicView;
 
-public class TopicController {
+public class TopicController implements CLIViewInterface {
 	private TopicModel model;
 	private TopicView view;
 	

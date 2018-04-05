@@ -3,8 +3,8 @@ package controllers;
 import java.util.List;
 import models.ThemeModel;
 import models.TopicModel;
+import views.cli.ThemeView;
 import models.Reference;
-import views.ThemeView;
 
 public class ThemeController {
 	ThemeModel model;

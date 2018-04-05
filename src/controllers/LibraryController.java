@@ -8,7 +8,7 @@ package controllers;
 import java.util.List;
 import models.LibraryModel;
 import models.TopicModel;
-import views.LibraryView;
+import views.cli.LibraryView;
 
 public class LibraryController {
     LibraryModel model;

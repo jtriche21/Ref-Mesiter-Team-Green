@@ -1,8 +1,9 @@
-package views;
+package views.cli;
 
 import java.util.ArrayList;
+import controllers.NoteController;
 
-import models.Note;
+//TODO Use controller instead of model
 
 /**
  * A view class for the viewing and printing of Note objects.
@@ -10,7 +11,7 @@ import models.Note;
  * @author Nick Ruby
  * @version 3/25/18
  */
-public class NoteView {
+public class NoteView implements CLIViewInterface{
     
     /**
      * Prints out one Note.
