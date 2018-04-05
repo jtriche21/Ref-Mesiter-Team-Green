@@ -10,11 +10,15 @@
  */
 package views;
 
+import java.util.List;
+
+import models.TopicModel;
+
 public class LibraryView{
     public void veiwLibrary(String libraryTitle, String LibraryDescription,
-                            List<TopicList> topicList);
+                            List<TopicModel> topicList) {
         System.out.println("Library: " + libraryTitle);
-        System.out.println("Library Description: " + libraryDescription);
+        System.out.println("Library Description: " + LibraryDescription);
         System.out.println("Current topic: " + topicList.toString());
         
     }

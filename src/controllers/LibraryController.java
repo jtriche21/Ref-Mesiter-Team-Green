@@ -7,6 +7,7 @@ package controllers;
 
 import java.util.List;
 import models.LibraryModel;
+import models.TopicModel;
 import views.LibraryView;
 
 public class LibraryController {
@@ -19,19 +20,19 @@ public class LibraryController {
     }
 
     public String getLibraryTitle(){
-        return model.getTitle();
+        return model.getLibraryTitle();
     }
 
     public void setLibraryTitle(String title){
-        model.setTitle(title);
+        model.setLibraryTitle(title);
     }
     
     public String getLibraryDescription(){
-        return model.getDescription();
+        return model.getLibraryDescription();
     }
    
     public void setLibraryDescription(String description){
-        model.setDescription();
+        model.setLibraryDescription(description);
     }
 
     public List<TopicModel> getLibraryTopicList(){
