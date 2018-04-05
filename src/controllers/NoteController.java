@@ -1,4 +1,9 @@
+package controllers;
+
 import java.util.ArrayList;
+import models.Note;
+import models.Reference;
+import views.NoteView;
 
 /**
  * A controller for the Note class. Stores a list of Notes so we can add,

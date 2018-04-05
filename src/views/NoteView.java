@@ -1,4 +1,8 @@
+package views;
+
 import java.util.ArrayList;
+
+import models.Note;
 
 /**
  * A view class for the viewing and printing of Note objects.

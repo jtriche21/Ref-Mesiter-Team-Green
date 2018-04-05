@@ -1,3 +1,5 @@
+package models;
+
 /**
  * Model class for References
  *
@@ -33,7 +35,7 @@ public class Reference {
      * @param publicationDate When the reference was published
      * @param owner The theme object that this reference instance is a member of
      */
-    public Reference(List<String> authors, String sourceTitle, String publicationDate, Theme owner) {
+    public Reference(List<String> authors, String sourceTitle, String publicationDate, ThemeModel owner) {
         this.authors = authors;
         this.sourceTitle = sourceTitle;
         this.publicationDate = publicationDate;
@@ -54,7 +56,7 @@ public class Reference {
      *
      * @param owner The Theme object that this reference instance is a member of
      */
-    public Reference(Theme owner) {
+    public Reference(ThemeModel owner) {
         this.authors = new ArrayList<String>();
         this.sourceTitle = "";
         this.publicationDate = "";
@@ -282,7 +284,7 @@ public class Reference {
      *
      * @return The owning theme
      */
-    public Theme getOwner() {
+    public ThemeModel getOwner() {
         return owner;
     }
 
@@ -291,7 +293,7 @@ public class Reference {
      *
      * @param owner the new owning theme
      */
-    public void setOwner(Theme owner) {
+    public void setOwner(ThemeModel owner) {
         this.owner = owner;
     }
 

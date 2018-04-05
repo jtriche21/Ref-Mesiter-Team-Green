@@ -8,7 +8,7 @@
  * @param List<TopicModel> topicList - The list of Topics associated with this
  * library. 
  */
-package topic_classes;
+package views;
 
 public class LibraryView{
     public void veiwLibrary(String libraryTitle, String LibraryDescription,

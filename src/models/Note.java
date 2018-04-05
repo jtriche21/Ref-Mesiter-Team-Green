@@ -1,3 +1,5 @@
+package models;
+
 /**
  * This class models the Note entities.
  * 
