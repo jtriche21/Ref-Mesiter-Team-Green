@@ -9,9 +9,11 @@ package models;
  */
 
 import java.util.List;
+import models.interfaces.IReferenceModel;
+import models.interfaces.IThemeModel;
 import java.util.ArrayList;
 
-public class ReferenceModel {
+public class ReferenceModel implements IReferenceModel {
 
     private List<String> authors;
     private String sourceTitle;
@@ -24,7 +26,7 @@ public class ReferenceModel {
     private List<IdeaModel> ideaList;
     private List<ArgumentRatingModel> argumentList;
     private List<NoteModel> noteList;
-    private ThemeModel owner;
+    private IhemeModel owner;
 
     /**
      * Creates a reference instance from an array of authors, the source title,
@@ -35,7 +37,7 @@ public class ReferenceModel {
      * @param publicationDate When the reference was published
      * @param owner The theme object that this reference instance is a member of
      */
-    public ReferenceModel(List<String> authors, String sourceTitle, String publicationDate, ThemeModel owner) {
+    public ReferenceModel(List<String> authors, String sourceTitle, String publicationDate, IThemeModel owner) {
         this.authors = authors;
         this.sourceTitle = sourceTitle;
         this.publicationDate = publicationDate;
