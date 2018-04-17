@@ -1,9 +1,9 @@
 package views.cli;
 
 import java.util.ArrayList;
-import views.IF_NoteView;
+import views.INoteView;
 import controllers.NoteController;
-import models.Note;
+import models.NoteModel;
 
 //TODO Use controller instead of model
 
@@ -13,14 +13,14 @@ import models.Note;
  * @author Nick Ruby
  * @version 3/25/18
  */
-public class NoteView implements IF_NoteView{
+public class NoteView implements INoteView{
     
     /**
      * Prints out one Note.
      * 
      * @param note The note to print.
      */
-    public void printNote(Note note) {
+    public void printNote(NoteModel note) {
         System.out.println(note.toString());
     }
     
@@ -29,11 +29,11 @@ public class NoteView implements IF_NoteView{
      * 
      * @param noteList The ArrayList of all notes to print.
      */
-    public void printNotes(ArrayList<Note> noteList) {
+    public void printNotes(ArrayList<NoteModel> noteList) {
         String printString = "";
         
         //Adds the title of each note to printString.
-        for(Note note : noteList) {
+        for(NoteModel note : noteList) {
             //Adds a newline to each line except the last.
             if(noteList.indexOf(note) != noteList.size() - 1)
                 printString += note.getTitle() + "\n";

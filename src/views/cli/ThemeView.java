@@ -2,8 +2,8 @@ package views.cli;
 
 import java.util.List;
 
-import models.Topic;
-import models.Reference;
+import models.TopicModel;
+import models.ReferenceModel;
 
 /**
  * A method to print out the values of the fields of the Theme
@@ -11,13 +11,13 @@ import models.Reference;
  * @author Jeremy
  * @param String description - The description the user entered for the Theme
  * @param String title - The title set for the theme
- * @param Topic owner - The Topic that this Theme is under
- * @param Topic topic - The Topic hat this Theme is a part of
+ * @param TopicModel owner - The Topic that this Theme is under
+ * @param TopicModel topic - The Topic hat this Theme is a part of
  * @param List<Reference> referenceList - The list of References associated with this Theme
  */
 public class ThemeView {
-	public void printThemeInformation(String description, String title, Topic owner,
-											Topic topic, List<Reference> referenceList) {
+	public void printThemeInformation(String description, String title, TopicModel owner,
+											TopicModel topic, List<ReferenceModel> referenceList) {
 		System.out.println("Theme: " + title + " is under " + owner);
 		System.out.println("Description: " + description);
 		System.out.println("Current references: " + referenceList.toString());

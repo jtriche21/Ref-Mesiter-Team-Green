@@ -1,7 +1,7 @@
 package views.cli;
 
-import views.IF_IdeaView;
+import views.IIdeaView;
 
-public class IdeaView implements IF_IdeaView {
+public class IdeaView implements IIdeaView {
 	//TODO Write View
 }

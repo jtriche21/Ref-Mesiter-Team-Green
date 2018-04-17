@@ -2,16 +2,16 @@ package controllers;
 
 import java.util.List;
 
-import models.Library;
-import models.Theme;
-import models.Topic;
+import models.LibraryModel;
+import models.ThemeModel;
+import models.TopicModel;
 import views.cli.TopicView;
 
 public class TopicController {
-	private Topic model;
+	private TopicModel model;
 	private TopicView view;
 	
-	public TopicController(Topic model) {
+	public TopicController(TopicModel model) {
 		this.model = model;
 	}
 	
@@ -21,22 +21,22 @@ public class TopicController {
 	public void setTopicTitle(String title) {
 		model.setTitle(title);
 	}
-	public Library getTopicOwner() {
+	public LibraryModel getTopicOwner() {
 		return model.getOwner();
 	}
-	public void setTopicOwner(Library owner) {
+	public void setTopicOwner(LibraryModel owner) {
 		model.setOwner(owner);
 	}
-	public Theme getTopicDescription() {
+	public ThemeModel getTopicDescription() {
 		return model.getDescription();
 	}
-	public void setTopicDescription(Theme description) {
+	public void setTopicDescription(ThemeModel description) {
 		model.setDescription(description);
 	}
-	public List<Theme> getTopicThemeList(){
+	public List<ThemeModel> getTopicThemeList(){
 		return model.getThemeList();
 	}
-	public void setTopicThemeList(List<Theme> themeList) {
+	public void setTopicThemeList(List<ThemeModel> themeList) {
 		model.setThemeList(themeList);
 	}
 	
@@ -45,7 +45,7 @@ public class TopicController {
 	 * @param theme - The theme object that will be added
 	 * @return true if the theme passed in exist, "Why would it?"
 	 */
-	public boolean addTheme(Theme theme) {
+	public boolean addTheme(ThemeModel theme) {
 		if(getTopicThemeList().add(theme)) {
 			return true;
 		}else {
@@ -58,7 +58,7 @@ public class TopicController {
 	 * @param theme - The Theme object that will be removed
 	 * @return true if the Theme object was in the current list of Themes
 	 */
-	public boolean removeTheme(Theme theme) {
+	public boolean removeTheme(ThemeModel theme) {
 		if(getTopicThemeList().remove(theme)) {
 			return true;
 		}else {

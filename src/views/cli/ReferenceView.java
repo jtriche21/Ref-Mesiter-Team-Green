@@ -1,7 +1,7 @@
 package views.cli;
 
-import views.IF_ReferenceView;
+import views.IReferenceView;
 
-public class ReferenceView implements IF_ReferenceView {
+public class ReferenceView implements IReferenceView {
 	//TODO Write View
 }

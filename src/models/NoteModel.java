@@ -6,14 +6,14 @@ package models;
  * @author Nick
  * @version 3/25/18
  */
-public class Note {
+public class NoteModel {
     
     /**The title of the Note.*/
     protected String title;
     /**The description of the Note.*/
     protected String description;
     /**The Reference to which this Note is attached.*/
-    private Reference reference;
+    private ReferenceModel reference;
     
     //Constructors#############################################################
     
@@ -24,7 +24,7 @@ public class Note {
      * @param description The description of the Note.
      * @param reference The Reference to which this Note is attached.
      */
-    public Note(String title, String description, Reference reference) {
+    public NoteModel(String title, String description, ReferenceModel reference) {
         this.title = title;
         this.description = description;
         this.reference = reference;
@@ -36,7 +36,7 @@ public class Note {
      * @param title The title of the Note.
      * @param description The description of the Note.
      */
-    public Note(String title, String description) {
+    public NoteModel(String title, String description) {
         this(title, description, null);
     }
     
@@ -83,7 +83,7 @@ public class Note {
      * 
      * @return The reference.
      */
-    public Reference getReference() {
+    public ReferenceModel getReference() {
         return reference;
     }
 
@@ -92,7 +92,7 @@ public class Note {
      * 
      * @param reference The reference to set.
      */
-    public void setReference(Reference reference) {
+    public void setReference(ReferenceModel reference) {
         this.reference = reference;
     }
 

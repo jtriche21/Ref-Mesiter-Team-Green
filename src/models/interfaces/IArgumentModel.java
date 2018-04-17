@@ -1,5 +1,5 @@
 package models.interfaces;
 
-public interface IF_Argument {
+public interface IArgumentModel {
 
 }
