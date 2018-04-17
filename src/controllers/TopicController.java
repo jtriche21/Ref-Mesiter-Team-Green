@@ -2,7 +2,7 @@ package controllers;
 
 import java.util.List;
 
-import models.Library;
+import models.LibraryModel;
 import models.Theme;
 import models.Topic;
 import views.cli.TopicView;
@@ -21,10 +21,10 @@ public class TopicController {
 	public void setTopicTitle(String title) {
 		model.setTitle(title);
 	}
-	public Library getTopicOwner() {
+	public LibraryModel getTopicOwner() {
 		return model.getOwner();
 	}
-	public void setTopicOwner(Library owner) {
+	public void setTopicOwner(LibraryModel owner) {
 		model.setOwner(owner);
 	}
 	public Theme getTopicDescription() {

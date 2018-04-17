@@ -6,15 +6,15 @@
 package controllers;
 
 import java.util.List;
-import models.Library;
+import models.LibraryModel;
 import models.Topic;
 import views.cli.LibraryView;
 
 public class LibraryController {
-    Library model;
+    LibraryModel model;
     LibraryView view;
 
-    public LibraryController(Library model,  LibraryView view) {
+    public LibraryController(LibraryModel model,  LibraryView view) {
         this.model = model;
         this.view = view;
     }

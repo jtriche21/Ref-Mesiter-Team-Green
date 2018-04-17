@@ -10,21 +10,57 @@
  */
 package views.cli;
 
-import java.util.List;
-import views.IF_LibraryView;
+import java.util.*;
+import views.ILibraryView;
 import controllers.TopicController;
+import models.interfaces.ILibraryModel;
 
-public class LibraryView implements IF_LibraryView {
-	
-	//TODO Loosely couple the view from the model using the controller
-	//TODO Make command line capable
-    
-	/*public void veiwLibrary(String libraryTitle, String LibraryDescription,
-                            List<Topic> topicList) {
-        System.out.println("Library: " + libraryTitle);
-        System.out.println("Library Description: " + LibraryDescription);
-        System.out.println("Current topic: " + topicList.toString());
+public class LibraryView {
+    /* the library data entered. */
+    private ILibraryModel library;
+    /** description of the library */
+    String libraryDescription;
+    /** title of the library */
+    String libraryTitle;
+    /* scanner for the UI*/
+    Scanner kB = new Scanner(System.in);
+
+    /**
+     * construct an input field dialog.
+     */
+    public LibraryView(ILibraryModel library){
+        this.library = library;
+    }
+
+    /**
+     * show the input entry UI.
+     */
+    public void getInputLib(){
+        /** gets the library title from UI */
+        System.out.println("Library Title: ");
+        libraryTitle = kB.nextLine();
+        /** gets the library description from UI */
+        System.out.println("Library Description: ");
+        libraryDescription = kB.nextLine();
         
-    } 
-    */
-}
+        library.set(libraryTitle, libraryDescription);
+    }
+    /**
+     * set the IF_LibraryModel object that the program works with.
+     * @param library
+     */
+    public void setData(ILibraryModel library){
+        this.library = library;
+    }
+
+    /**
+     * get the IF_LibraryModel object that this program works with.
+     * @return library
+     */
+    public ILibraryModel getData(){
+        return this.library;
+    }
+}//end of LibraryView	
+	
+	
+

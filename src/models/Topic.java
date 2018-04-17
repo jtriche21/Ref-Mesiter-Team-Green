@@ -1,8 +1,15 @@
 package models;
 import java.util.List;
 
+/**
+ * 
+ * @author Cagle
+ *
+ */
 public class Topic {
+	/** list of Themes. */
 	private List<Theme> ThemeList;
+	/** owner of the topic. */
 	private Library owner;
 	private String title;
 	private Theme description;

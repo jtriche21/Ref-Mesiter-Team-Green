@@ -1,5 +1,5 @@
 package models.interfaces;
 
-public interface IF_Topic {
+public interface IF_TopicModel{
 
 }
