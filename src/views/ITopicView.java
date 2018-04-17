@@ -1,5 +1,5 @@
 package views;
 
-public interface IF_ReferenceView {
+public interface ITopicView {
 	//TODO Write interface for view
 }

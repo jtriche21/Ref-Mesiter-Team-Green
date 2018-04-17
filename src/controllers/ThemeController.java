@@ -1,16 +1,16 @@
 package controllers;
 
 import java.util.List;
-import models.Theme;
-import models.Topic;
+import models.ThemeModel;
+import models.TopicModel;
 import views.cli.ThemeView;
-import models.Reference;
+import models.ReferenceModel;
 
 public class ThemeController {
-	Theme model;
+	ThemeModel model;
 	ThemeView view;
 	
-	public ThemeController(Theme model, ThemeView view) {
+	public ThemeController(ThemeModel model, ThemeView view) {
 		this.model = model;
 		this.view = view;
 	}
@@ -27,22 +27,22 @@ public class ThemeController {
 	public void setThemeDescription(String description) {
 		model.setDescription(description);
 	}
-	public Topic getThemeTopic() {
+	public TopicModel getThemeTopic() {
 		return model.getTopic();
 	}
-	public void setThemeTopic(Topic topic) {
+	public void setThemeTopic(TopicModel topic) {
 		model.setTopic(topic);
 	}
-	public Topic getThemeOwner() {
+	public TopicModel getThemeOwner() {
 		return model.getOwner();
 	}
-	public void setThemeOwner(Topic owner) {
+	public void setThemeOwner(TopicModel owner) {
 		model.setOwner(owner);
 	}
-	public List<Reference> getThemeReferenceList() {
+	public List<ReferenceModel> getThemeReferenceList() {
 		return model.getReferenceList();
 	}
-	public void setThemeReferenceList(List<Reference> referenceList) {
+	public void setThemeReferenceList(List<ReferenceModel> referenceList) {
 		model.setReferenceList(referenceList);
 	}
 	public void printThemeInformation() {

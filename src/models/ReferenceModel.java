@@ -11,7 +11,7 @@ package models;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Reference {
+public class ReferenceModel {
 
     private List<String> authors;
     private String sourceTitle;
@@ -21,10 +21,10 @@ public class Reference {
     private String publisher;
     private String publicationDate;
     private String location;
-    private List<Idea> ideaList;
-    private List<ArgumentRating> argumentList;
-    private List<Note> noteList;
-    private Theme owner;
+    private List<IdeaModel> ideaList;
+    private List<ArgumentRatingModel> argumentList;
+    private List<NoteModel> noteList;
+    private ThemeModel owner;
 
     /**
      * Creates a reference instance from an array of authors, the source title,
@@ -35,7 +35,7 @@ public class Reference {
      * @param publicationDate When the reference was published
      * @param owner The theme object that this reference instance is a member of
      */
-    public Reference(List<String> authors, String sourceTitle, String publicationDate, Theme owner) {
+    public ReferenceModel(List<String> authors, String sourceTitle, String publicationDate, ThemeModel owner) {
         this.authors = authors;
         this.sourceTitle = sourceTitle;
         this.publicationDate = publicationDate;
@@ -45,9 +45,9 @@ public class Reference {
         this.volumeNumber = "";
         this.publisher = "";
         this.location = "";
-        this.ideaList = new ArrayList<Idea>();
-        this.argumentList = new ArrayList<ArgumentRating>();
-        this.noteList = new ArrayList<Note>();
+        this.ideaList = new ArrayList<IdeaModel>();
+        this.argumentList = new ArrayList<ArgumentRatingModel>();
+        this.noteList = new ArrayList<NoteModel>();
 
     }
 
@@ -56,7 +56,7 @@ public class Reference {
      *
      * @param owner The Theme object that this reference instance is a member of
      */
-    public Reference(Theme owner) {
+    public ReferenceModel(ThemeModel owner) {
         this.authors = new ArrayList<String>();
         this.sourceTitle = "";
         this.publicationDate = "";
@@ -66,9 +66,9 @@ public class Reference {
         this.volumeNumber = "";
         this.publisher = "";
         this.location = "";
-        this.ideaList = new ArrayList<Idea>();
-        this.argumentList = new ArrayList<ArgumentRating>();
-        this.noteList = new ArrayList<Note>();
+        this.ideaList = new ArrayList<IdeaModel>();
+        this.argumentList = new ArrayList<ArgumentRatingModel>();
+        this.noteList = new ArrayList<NoteModel>();
     }
 
     /**
@@ -76,7 +76,7 @@ public class Reference {
      *
      * @param item the idea to be added
      */
-    public void addIdea(Idea item){
+    public void addIdea(IdeaModel item){
         this.ideaList.add(item);
     }
 
@@ -85,7 +85,7 @@ public class Reference {
      *
      * @param item The Idea to be removed
      */
-    public void removeIdea(Idea item){
+    public void removeIdea(IdeaModel item){
         this.ideaList.remove(item);
     }
 
@@ -94,7 +94,7 @@ public class Reference {
      *
      * @param ar The argument to be added to the reference
      */
-    public void addArgument(ArgumentRating ar){
+    public void addArgument(ArgumentRatingModel ar){
         this.argumentList.add(ar);
     }
 
@@ -103,7 +103,7 @@ public class Reference {
      *
      * @param ar the argument to be removed
      */
-    public void removeArgument(ArgumentRating ar){
+    public void removeArgument(ArgumentRatingModel ar){
         this.argumentList.remove(ar);
     }
 
@@ -112,7 +112,7 @@ public class Reference {
      *
      * @param item the note to be added
      */
-    public void addNote(Note item){
+    public void addNote(NoteModel item){
         this.noteList.add(item);
     }
 
@@ -121,7 +121,7 @@ public class Reference {
      *
      * @param item the note to be removed
      */
-    public void removeNote(Note item){
+    public void removeNote(NoteModel item){
         this.noteList.remove(item);
     }
 
@@ -284,7 +284,7 @@ public class Reference {
      *
      * @return The owning theme
      */
-    public Theme getOwner() {
+    public ThemeModel getOwner() {
         return owner;
     }
 
@@ -293,7 +293,7 @@ public class Reference {
      *
      * @param owner the new owning theme
      */
-    public void setOwner(Theme owner) {
+    public void setOwner(ThemeModel owner) {
         this.owner = owner;
     }
 

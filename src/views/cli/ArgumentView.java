@@ -1,7 +1,7 @@
 package views.cli;
 
-import views.IF_ArgumentView;
+import views.IArgumentView;
 
-public class ArgumentView implements IF_ArgumentView {
+public class ArgumentView implements IArgumentView {
 	//TODO Write View
 }

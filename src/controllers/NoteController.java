@@ -1,8 +1,8 @@
 package controllers;
 
 import java.util.ArrayList;
-import models.Note;
-import models.Reference;
+import models.NoteModel;
+import models.ReferenceModel;
 import views.cli.NoteView;
 
 /**
@@ -16,14 +16,14 @@ import views.cli.NoteView;
 public class NoteController {
     
     /**A list of all Note objects.*/
-    private ArrayList<Note> noteList;
+    private ArrayList<NoteModel> noteList;
     /**The NoteView object.*/
     private NoteView noteView;
     
     //Constructors#############################################################
     
     public NoteController() {
-        noteList = new ArrayList<Note>();
+        noteList = new ArrayList<NoteModel>();
         noteView = new NoteView();
     }
     
@@ -38,7 +38,7 @@ public class NoteController {
      * @param ref The Reference to which this Note is attached.
      * @return False if adding the note fails; True otherwise.
      */
-    public boolean addNote(String title, String description, Reference ref) {
+    public boolean addNote(String title, String description, ReferenceModel ref) {
         //If the title is empty.
         if(title.equals("")) {
             //TODO Notify user of error.
@@ -50,7 +50,7 @@ public class NoteController {
             return false; //TODO Notify user of error.
         }*/
         
-        Note newNote = new Note(title, description, ref);
+        NoteModel newNote = new NoteModel(title, description, ref);
         noteList.add(newNote);
         //TODO Add newNote to Reference.
         
@@ -63,7 +63,7 @@ public class NoteController {
      * @param note The note to be deleted.
      * @return False if removing the note fails; True otherwise.
      */
-    public boolean deleteNote(Note note) {
+    public boolean deleteNote(NoteModel note) {
         //Checks for the note in noteList.
         if(!noteList.contains(note)) {
             //TODO Notify user of error.
@@ -85,7 +85,7 @@ public class NoteController {
      * @param description Either empty or the new description.
      * @return False if editing the note fails; True otherwise.
      */
-    public boolean editNote(Note note, String title, String description) {
+    public boolean editNote(NoteModel note, String title, String description) {
         //Checks for the note in noteList.
         if(!noteList.contains(note)) {
             //TODO Notify user of error.
@@ -111,7 +111,7 @@ public class NoteController {
      * @param note The note to view.
      * @return False if viewing the note fails; True otherwise.
      */
-    public boolean viewNote(Note note) {
+    public boolean viewNote(NoteModel note) {
         //Checks for the note in noteList.
         if(!noteList.contains(note)) {
             //TODO Notify user of error.

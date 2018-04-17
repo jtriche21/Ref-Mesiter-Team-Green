@@ -1,5 +1,5 @@
 package views;
 
-public interface IF_ThemeView {
+public interface IIdeaView {
 	//TODO Write interface for view
 }

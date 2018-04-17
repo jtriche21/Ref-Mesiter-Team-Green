@@ -1,5 +1,5 @@
 package views;
 
-public interface IF_IdeaView {
+public interface INoteView {
 	//TODO Write interface for view
 }

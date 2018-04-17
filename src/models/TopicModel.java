@@ -6,18 +6,18 @@ import java.util.List;
  * @author Cagle
  *
  */
-public class Topic {
+public class TopicModel {
 	/** list of Themes. */
-	private List<Theme> ThemeList;
+	private List<ThemeModel> ThemeList;
 	/** owner of the topic. */
-	private Library owner;
+	private LibraryModel owner;
 	private String title;
-	private Theme description;
+	private ThemeModel description;
 	
-	public Library getOwner() {
+	public LibraryModel getOwner() {
 		return owner;
 	}
-	public void setOwner(Library owner) {
+	public void setOwner(LibraryModel owner) {
 		this.owner = owner;
 	}
 	public String getTitle() {
@@ -26,16 +26,16 @@ public class Topic {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public Theme getDescription() {
+	public ThemeModel getDescription() {
 		return description;
 	}
-	public void setDescription(Theme description) {
+	public void setDescription(ThemeModel description) {
 		this.description = description;
 	}
-	public List<Theme> getThemeList() {
+	public List<ThemeModel> getThemeList() {
 		return ThemeList;
 	}
-	public void setThemeList(List<Theme> themeList) {
+	public void setThemeList(List<ThemeModel> themeList) {
 		ThemeList = themeList;
 	}
  

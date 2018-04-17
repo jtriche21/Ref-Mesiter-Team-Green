@@ -1,5 +1,5 @@
 package views;
 
-public interface IF_ArgumentView {
+public interface IReferenceView {
 	//TODO Write interface for view
 }

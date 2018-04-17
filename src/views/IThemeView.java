@@ -1,5 +1,5 @@
 package views;
 
-public interface IF_NoteView {
+public interface IThemeView {
 	//TODO Write interface for view
 }

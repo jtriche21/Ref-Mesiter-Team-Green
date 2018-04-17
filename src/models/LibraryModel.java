@@ -12,13 +12,13 @@ import java.util.List;
 
 import models.interfaces.ILibraryModel;
 
-public class Library implements ILibraryModel{
+public class LibraryModel implements ILibraryModel{
     private String libraryTitle;
     private String libraryDescription;
-    private List<Topic> topicList;
+    private List<TopicModel> topicList;
     
     /** Default constructor for objects of class library*/
-    public Library() {
+    public LibraryModel() {
     	this.libraryTitle = "";
     	this.libraryDescription = "";
     	this.topicList = null;
@@ -30,11 +30,9 @@ public class Library implements ILibraryModel{
      * @param libraryDescription
      * @param topicList
      */
-    public Library(String libraryTitle, String libraryDescription,
-    			   List<Topic> topicList) {
+    public LibraryModel(String libraryTitle, String libraryDescription,
+    			   List<TopicModel> topicList) {
     	this.set(libraryTitle, libraryDescription);
-    	//this.libraryTitle = libraryTitle;
-    	//this.libraryDescription = libraryDescription;
     	this.topicList = topicList;
     }//end constructor
     
@@ -43,7 +41,7 @@ public class Library implements ILibraryModel{
      * @param libraryTitle
      * @param libraryDescription
      */
-    public Library(String libraryTitle, String libraryDescription) {
+    public LibraryModel(String libraryTitle, String libraryDescription) {
     	this.set(libraryTitle, libraryDescription);
     }//end constructor
     
@@ -83,7 +81,7 @@ public class Library implements ILibraryModel{
      * Sets the Topic List. 
      * @param topicList
      */
-    public void setTopicList(List<Topic> topicList){
+    public void setTopicList(List<TopicModel> topicList){
        this.topicList = topicList;
     }
     
@@ -91,7 +89,7 @@ public class Library implements ILibraryModel{
      * Gets the topic list.
      * @return topicList
      */
-    public List<Topic> getTopicList(){
+    public List<TopicModel> getTopicList(){
         return this.topicList;
     }
     

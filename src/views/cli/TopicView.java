@@ -1,10 +1,10 @@
 package views.cli;
 import java.util.List;
-import views.IF_TopicView;
-import models.Theme;
+import views.ITopicView;
+import models.ThemeModel;
 
-public class TopicView implements IF_TopicView {
-	public void printAllThemes(List<Theme> themeList) {
+public class TopicView implements ITopicView {
+	public void printAllThemes(List<ThemeModel> themeList) {
 		System.out.println("Themes: ");
 		for(int i=0; i<themeList.size(); i++) {
 			System.out.print(themeList.get(i).getTitle() + " ");
@@ -12,7 +12,7 @@ public class TopicView implements IF_TopicView {
 	}
 	
 	
-	public void printTheme(List<Theme> themeList, int index) {
+	public void printTheme(List<ThemeModel> themeList, int index) {
 		System.out.println(themeList.get(index).getTitle());
 	}
 }

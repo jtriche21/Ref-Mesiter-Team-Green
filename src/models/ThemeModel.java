@@ -2,12 +2,12 @@ package models;
 
 import java.util.List;
 
-public class Theme {
+public class ThemeModel {
 	private String description;
 	private String title;
-	private Topic owner;
-	private Topic topic;
-	private List<Reference> referenceList;
+	private TopicModel owner;
+	private TopicModel topic;
+	private List<ReferenceModel> referenceList;
 	
 	public String getDescription() {
 		return description;
@@ -21,22 +21,22 @@ public class Theme {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public Topic getOwner() {
+	public TopicModel getOwner() {
 		return owner;
 	}
-	public void setOwner(Topic owner) {
+	public void setOwner(TopicModel owner) {
 		this.owner = owner;
 	}
-	public Topic getTopic() {
+	public TopicModel getTopic() {
 		return topic;
 	}
-	public void setTopic(Topic topic) {
+	public void setTopic(TopicModel topic) {
 		this.topic = topic;
 	}
-	public List<Reference> getReferenceList() {
+	public List<ReferenceModel> getReferenceList() {
 		return referenceList;
 	}
-	public void setReferenceList(List<Reference> referenceList) {
+	public void setReferenceList(List<ReferenceModel> referenceList) {
 		this.referenceList = referenceList;
 	}
 }
