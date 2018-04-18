@@ -1,25 +1,53 @@
 package views.cli;
 
-import java.util.List;
+import java.util.Scanner;
+import models.interfaces.IThemeModel;
 
-import models.TopicModel;
-import models.ReferenceModel;
-
-/**
- * A method to print out the values of the fields of the Theme
- * passed into it.
- * @author Jeremy
- * @param String description - The description the user entered for the Theme
- * @param String title - The title set for the theme
- * @param TopicModel owner - The Topic that this Theme is under
- * @param TopicModel topic - The Topic hat this Theme is a part of
- * @param List<Reference> referenceList - The list of References associated with this Theme
- */
 public class ThemeView {
-	public void printThemeInformation(String description, String title, TopicModel owner,
-											TopicModel topic, List<ReferenceModel> referenceList) {
-		System.out.println("Theme: " + title + " is under " + owner);
-		System.out.println("Description: " + description);
-		System.out.println("Current references: " + referenceList.toString());
+	/** The theme model interface*/
+	private IThemeModel theme;
+	/** The theme description. */
+	String themeDescription;
+	/** The theme title. */
+	String themeTitle;
+	/** The scanner used for user input */
+	Scanner scanner;
+	
+	/**
+	 * Instantiates a new theme view.
+	 * @param theme the theme
+	 */
+	public ThemeView(IThemeModel theme) {
+		scanner = new Scanner(System.in);
+		this.theme = theme;
+	}
+	
+	/**
+	 * Gets the user input.
+	 * @return the user input
+	 */
+	public void getUserInput() {
+		System.out.print("Theme title: ");
+		themeTitle = scanner.next();
+		System.out.println("Theme Description");
+		themeDescription = scanner.next();
+		
+		theme.set(themeTitle, themeDescription);
+	}
+	
+	/**
+	 * Sets the theme model interface.
+	 * @param theme sets the current instance to this one
+	 */
+	public void setThemeData(IThemeModel theme) {
+		this.theme = theme;
+	}
+	
+	/**
+	 * Gets an instance of the theme model interface
+	 * @return the instance of the theme model interface that should have been initialized
+	 */
+	public IThemeModel getThemeData() {
+		return this.theme;
 	}
 }

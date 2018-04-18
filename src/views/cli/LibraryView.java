@@ -35,7 +35,7 @@ public class LibraryView {
     /**
      * show the input entry UI.
      */
-    public void getInputLib(){
+    public void getInputLibrary(){
         /** gets the library title from UI */
         System.out.println("Library Title: ");
         libraryTitle = kB.nextLine();

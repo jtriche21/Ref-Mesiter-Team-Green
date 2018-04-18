@@ -12,7 +12,7 @@ public class TopicModel {
 	/** owner of the topic. */
 	private LibraryModel owner;
 	private String title;
-	private ThemeModel description;
+	private String description;
 	
 	public LibraryModel getOwner() {
 		return owner;
@@ -26,10 +26,10 @@ public class TopicModel {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public ThemeModel getDescription() {
+	public String getDescription() {
 		return description;
 	}
-	public void setDescription(ThemeModel description) {
+	public void setDescription(String description) {
 		this.description = description;
 	}
 	public List<ThemeModel> getThemeList() {
