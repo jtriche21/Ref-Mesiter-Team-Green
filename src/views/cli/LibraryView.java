@@ -1,3 +1,5 @@
+package views; 
+
 /**
  * @author: Green Team: Cameron Cagle
  * @version: 3/21/18 
@@ -8,14 +10,12 @@
  * @param List<TopicModel> topicList - The list of Topics associated with this
  * library. 
  */
-package views.cli;
-
 import java.util.*;
-import views.ILibraryView;
+import views.*;
 import controllers.TopicController;
 import models.interfaces.ILibraryModel;
 
-public class LibraryView {
+public class LibraryView implements ILibraryView {
     /* the library data entered. */
     private ILibraryModel library;
     /** description of the library */
