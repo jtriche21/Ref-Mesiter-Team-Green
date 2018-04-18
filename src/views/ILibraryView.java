@@ -4,7 +4,7 @@ import models.interfaces.ILibraryModel;
 
 public interface ILibraryView {
 	/** show entry form to the user for input. */
-    public void getInputLibrary();
+    public void getInputLib();
 
     /** get the data entered by the user. */
     public ILibraryModel getData();
