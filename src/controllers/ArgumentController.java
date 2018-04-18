@@ -20,7 +20,27 @@ public class ArgumentController {
     
     public ArgumentController() {
         arguments = new ArrayList<Argument>();
-        view = new ArgumentView();
+        view = new ArgumentView(null);
+    }
+    
+    /**
+     * Adds an argument from user input.
+     * 
+     * @return The new argument.
+     */
+    public Argument addArgument() {
+        Argument arg = new Argument();
+        view.setData(arg);
+        view.getInputArgument();
+        arg = (Argument) view.getData();
+        
+        for(Argument current : arguments) {
+            if(current.getTitle().equals(arg.getTitle()))
+                return null;
+        }
+        
+        arguments.add(arg);
+        return arg;
     }
     
     public Argument addArgument(ArgumentRating rating, String title, String statement) {

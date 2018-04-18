@@ -10,12 +10,6 @@ public class ArgumentView implements IF_ArgumentView {
 
     private IF_Argument arg;
     
-    private ArgumentRating rating;
-    
-    private String title;
-    
-    private String statement;
-    
     private Scanner scanIn;
     
     public ArgumentView(IF_Argument arg) {
@@ -25,11 +19,13 @@ public class ArgumentView implements IF_ArgumentView {
     
     @Override
     public void getInputArgument() {
+        ArgumentRating rating = null;
+        
         System.out.println("Argument Title: ");
-        title = scanIn.nextLine();
+        String title = scanIn.nextLine();
         
         System.out.println("Argument Statement: ");
-        statement = scanIn.nextLine();
+        String statement = scanIn.nextLine();
         
         int i = -1;
         for(boolean done = false; done; ) {
@@ -64,13 +60,12 @@ public class ArgumentView implements IF_ArgumentView {
 
     @Override
     public IF_Argument getData() {
-        // TODO Auto-generated method stub
-        return null;
+        return arg;
     }
 
     @Override
     public void setData(IF_Argument arg) {
-        // TODO Auto-generated method stub
+        this.arg = arg;
         
     }
 }

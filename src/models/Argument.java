@@ -58,6 +58,16 @@ public class Argument implements IF_Argument {
     public Argument(String title, String statement) {
         this(null, title, statement);
     }
+    
+    /**
+     * The constructor to create an empty Argument.
+     */
+    public Argument() {
+        this.rating = null;
+        this.title = null;
+        this.statement = null;
+        references = new ArrayList<Reference>();
+    }
 
     //Getters and Setters######################################################
     
@@ -146,6 +156,11 @@ public class Argument implements IF_Argument {
         this.rating = rating;
         this.title = title;
         this.statement = statement;
+    }
+    
+    @Override
+    public String toString() {
+        return "Title: " + title + "\nStatement: " + statement;
     }
     
 }
