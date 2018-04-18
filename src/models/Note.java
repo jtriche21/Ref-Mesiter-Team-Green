@@ -1,12 +1,14 @@
 package models;
 
+import models.interfaces.IF_Note;
+
 /**
  * This class models the Note entities.
  * 
  * @author Nick
- * @version 3/25/18
+ * @version 4/18/18
  */
-public class Note {
+public class Note implements IF_Note {
     
     /**The title of the Note.*/
     protected String title;
@@ -25,8 +27,7 @@ public class Note {
      * @param reference The Reference to which this Note is attached.
      */
     public Note(String title, String description, Reference reference) {
-        this.title = title;
-        this.description = description;
+        set(title, description);
         this.reference = reference;
     }
     
@@ -38,6 +39,15 @@ public class Note {
      */
     public Note(String title, String description) {
         this(title, description, null);
+    }
+    
+    /**
+     * The constructor for an empty object.
+     */
+    public Note() {
+        this.title = null;
+        this.description = null;
+        this.reference = null;
     }
     
     //Getters and Setters######################################################
@@ -100,7 +110,13 @@ public class Note {
     
     @Override
     public String toString() {
-        return title + "\n" + description;
+        return "Title: " + title + "\nDescription: " + description;
+    }
+
+    @Override
+    public void set(String title, String description) {
+        this.title = title;
+        this.description = description;
     }
     
 }

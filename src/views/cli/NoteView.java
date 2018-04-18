@@ -1,9 +1,12 @@
 package views.cli;
 
 import java.util.ArrayList;
+import java.util.Scanner;
+
 import views.IF_NoteView;
 import controllers.NoteController;
 import models.Note;
+import models.interfaces.IF_Note;
 
 //TODO Use controller instead of model
 
@@ -11,12 +14,21 @@ import models.Note;
  * A view class for the viewing and printing of Note objects.
  * 
  * @author Nick Ruby
- * @version 3/25/18
+ * @version 4/18/18
  */
 public class NoteView implements IF_NoteView{
     
+    private IF_Note note;
+    
+    private Scanner scanIn;
+    
+    public NoteView(IF_Note note) {
+        this.note = note;
+        scanIn = new Scanner(System.in);
+    }
+    
     /**
-     * Prints out one Note.
+     * Prints out a certain Note.
      * 
      * @param note The note to print.
      */
@@ -42,5 +54,26 @@ public class NoteView implements IF_NoteView{
         }
         
         System.out.println(printString);
+    }
+
+    @Override
+    public void getInputArgument() {
+        System.out.println("Note Title: ");
+        String title = scanIn.nextLine();
+        
+        System.out.println("Note Description: ");
+        String description = scanIn.nextLine();
+        
+        note.set(title, description);
+    }
+
+    @Override
+    public IF_Note getData() {
+        return note;
+    }
+
+    @Override
+    public void setData(IF_Note note) {
+        this.note = note;
     }
 }

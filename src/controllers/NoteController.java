@@ -3,6 +3,7 @@ package controllers;
 import java.util.ArrayList;
 import models.Note;
 import models.Reference;
+import views.IF_NoteView;
 import views.cli.NoteView;
 
 /**
@@ -18,16 +19,30 @@ public class NoteController {
     /**A list of all Note objects.*/
     private ArrayList<Note> noteList;
     /**The NoteView object.*/
-    private NoteView noteView;
+    private IF_NoteView noteView;
     
     //Constructors#############################################################
     
     public NoteController() {
         noteList = new ArrayList<Note>();
-        noteView = new NoteView();
+        noteView = new NoteView(null);
     }
     
     //Methods##################################################################
+    
+    public boolean addNote() {
+        Note note = new Note();
+        
+        noteView.setData(note);
+        noteView.getInputArgument();
+        note = (Note) noteView.getData();
+        
+        if(note.getTitle().equals(""))
+            return false;
+        
+        noteList.add(note);
+        return true;
+    }
     
     /**
      * Checks for valid title, then creates the Note and adds it to noteList 
