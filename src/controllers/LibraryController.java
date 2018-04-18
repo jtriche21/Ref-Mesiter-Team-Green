@@ -7,31 +7,57 @@ package controllers;
 
 import java.util.List;
 import models.*;
-import views.cli.LibraryView;
+import controllers.TopicController;
+import views.ILibraryView;
 
+/**
+ * 
+ * @author Cagle
+ *
+ */
 public class LibraryController {
-    LibraryModel model;
-    LibraryView view;
-
-    public LibraryController(LibraryModel model,  LibraryView view) {
-        this.model = model;
-        this.view = view;
-    }
-
-    public String getLibraryTitle(){
-        return model.getLibraryTitle();
-    }
-
-    public void setLibraryTitle(String title){
-        model.setLibraryTitle(title);
+	/** library model object */
+	LibraryModel model;
+	/** library view interface object */
+    ILibraryView view;
+    /** */
+    TopicController t;
+    
+    /** instance of a LibraryController */
+    private static LibraryController instance;
+      
+    public LibraryController() {
+    	this.model = null;
+    	this.view = null;
+    	this.t = null;
     }
     
-    public String getLibraryDescription(){
-        return model.getLibraryDescription();
+    public LibraryController(LibraryModel model,  ILibraryView view, TopicController t) {
+        this.model = model;
+        this.view = view;
+        this.t = t;
+    }
+    
+    public static LibraryController getInstance() {
+    	if(instance == null) 
+    		instance = new LibraryController();
+    	return instance;
+    }
+
+    public LibraryModel getLibraryModel(){
+        return model;
+    }
+
+    public void setLibraryModel(LibraryModel model){
+        this.model = model;
+    }
+    
+    public ILibraryView getLibraryView(){
+        return view;
     }
    
-    public void setLibraryDescription(String description){
-        model.setLibraryDescription(description);
+    public void setLibraryView(ILibraryView view){
+        this.view = view;
     }
 
     public List<TopicModel> getLibraryTopicList(){
