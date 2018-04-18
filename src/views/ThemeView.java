@@ -1,7 +1,8 @@
-package views.cli;
+package views;
 
 import java.util.Scanner;
-import models.interfaces.IThemeModel;
+
+import interfaces.IThemeModel;
 
 public class ThemeView {
 	/** The theme model interface*/

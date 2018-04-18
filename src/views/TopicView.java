@@ -1,9 +1,8 @@
-package views.cli;
-import views.ITopicView;
-
+package views;
 import java.util.Scanner;
 
-import models.interfaces.ITopicModel;
+import interfaces.ITopicModel;
+import interfaces.ITopicView;
 
 public class TopicView implements ITopicView {
 	

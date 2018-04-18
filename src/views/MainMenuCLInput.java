@@ -1,4 +1,4 @@
-package views.cli;
+package views;
 
 import interfaces.*;
 import java.util.Scanner;

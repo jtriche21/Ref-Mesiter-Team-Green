@@ -3,7 +3,7 @@ package controllers;
 import java.util.ArrayList;
 import models.NoteModel;
 import models.ReferenceModel;
-import views.cli.NoteView;
+import views.NoteView;
 
 /**
  * A controller for the Note class. Stores a list of Notes so we can add,

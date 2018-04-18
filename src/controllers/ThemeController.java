@@ -3,7 +3,7 @@ package controllers;
 import java.util.List;
 import models.ThemeModel;
 import models.TopicModel;
-import views.cli.ThemeView;
+import views.ThemeView;
 import models.ReferenceModel;
 
 public class ThemeController {

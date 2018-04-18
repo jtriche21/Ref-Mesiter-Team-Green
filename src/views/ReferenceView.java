@@ -1,6 +1,6 @@
-package views.cli;
+package views;
 
-import views.IReferenceView;
+import interfaces.IReferenceView;
 
 public class ReferenceView implements IReferenceView {
 	//TODO Write View

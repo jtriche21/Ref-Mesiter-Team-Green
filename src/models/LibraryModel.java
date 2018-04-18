@@ -10,7 +10,7 @@ import models.interfaces.*;
 
 import java.util.List;
 
-import models.interfaces.ILibraryModel;
+import interfaces.ILibraryModel;
 
 public class LibraryModel implements ILibraryModel{
     private String libraryTitle;

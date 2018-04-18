@@ -1,8 +1,9 @@
-package views.cli;
+package views;
 
 import java.util.ArrayList;
-import views.INoteView;
+
 import controllers.NoteController;
+import interfaces.INoteView;
 import models.NoteModel;
 
 //TODO Use controller instead of model

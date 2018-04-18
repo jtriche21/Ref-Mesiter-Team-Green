@@ -9,8 +9,10 @@ package models;
  */
 
 import java.util.List;
-import models.interfaces.IReferenceModel;
-import models.interfaces.IThemeModel;
+
+import interfaces.IReferenceModel;
+import interfaces.IThemeModel;
+
 import java.util.ArrayList;
 
 public class ReferenceModel implements IReferenceModel {

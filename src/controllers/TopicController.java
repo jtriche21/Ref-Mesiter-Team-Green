@@ -5,7 +5,7 @@ import java.util.List;
 import models.LibraryModel;
 import models.ThemeModel;
 import models.TopicModel;
-import views.cli.TopicView;
+import views.TopicView;
 
 public class TopicController {
 	private TopicModel model;

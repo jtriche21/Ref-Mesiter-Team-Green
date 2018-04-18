@@ -2,7 +2,8 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
-import models.interfaces.IArgumentModel;
+
+import interfaces.IArgumentModel;
 
 public class ArgumentModel implements IArgumentModel {
 	

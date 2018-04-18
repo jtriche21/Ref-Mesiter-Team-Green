@@ -1,11 +1,12 @@
 package controllers;
 
 import java.util.List;
+
+import interfaces.IReferenceModel;
+import interfaces.IReferenceView;
+import interfaces.IThemeModel;
 import models.ReferenceModel;
 import models.ThemeModel;
-import models.interfaces.IReferenceModel;
-import models.interfaces.IThemeModel;
-import views.IReferenceView;
 
 /**
  * @author Tyler McVeigh

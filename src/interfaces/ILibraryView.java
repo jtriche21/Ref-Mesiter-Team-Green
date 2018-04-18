@@ -1,6 +1,4 @@
-package views;
-
-import models.interfaces.ILibraryModel;
+package interfaces;
 
 public interface ILibraryView {
 	/** show entry form to the user for input. */

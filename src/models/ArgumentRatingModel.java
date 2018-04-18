@@ -1,7 +1,7 @@
 package models;
 
-import models.interfaces.IArgumentModel;
-import models.interfaces.IReferenceModel;
+import interfaces.IArgumentModel;
+import interfaces.IReferenceModel;
 
 public class ArgumentRatingModel {
 

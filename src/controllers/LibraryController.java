@@ -8,7 +8,7 @@ package controllers;
 import java.util.List;
 import models.*;
 import controllers.TopicController;
-import views.ILibraryView;
+import interfaces.ILibraryView;
 
 /**
  * 

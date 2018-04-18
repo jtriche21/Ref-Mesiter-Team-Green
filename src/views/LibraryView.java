@@ -10,10 +10,11 @@ package views;
  * @param List<TopicModel> topicList - The list of Topics associated with this
  * library. 
  */
+
+
 import java.util.*;
-import views.*;
 import controllers.TopicController;
-import models.interfaces.ILibraryModel;
+import interfaces.*;
 
 public class LibraryView implements ILibraryView {
     /* the library data entered. */
@@ -35,7 +36,7 @@ public class LibraryView implements ILibraryView {
     /**
      * show the input entry UI.
      */
-    public void getInputLibrary(){
+    public void getInputLib(){
         /** gets the library title from UI */
         System.out.println("Library Title: ");
         libraryTitle = kB.nextLine();

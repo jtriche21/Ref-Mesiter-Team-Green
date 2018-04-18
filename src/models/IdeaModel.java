@@ -4,7 +4,8 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
-import models.interfaces.IIdeaModel;
+
+import interfaces.IIdeaModel;
 
 /**
  * @author Tyler McVeigh

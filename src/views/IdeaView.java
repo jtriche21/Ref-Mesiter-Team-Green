@@ -1,6 +1,6 @@
-package views.cli;
+package views;
 
-import views.IIdeaView;
+import interfaces.IIdeaView;
 
 public class IdeaView implements IIdeaView {
 	//TODO Write View

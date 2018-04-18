@@ -1,6 +1,4 @@
-package views.cli;
-
-import views.IArgumentView;
+package views;
 
 public class ArgumentView implements IArgumentView {
 	//TODO Write View

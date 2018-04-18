@@ -1,6 +1,4 @@
-package views;
-
-import models.interfaces.ITopicModel;
+package interfaces;
 
 public interface ITopicView {
 	
