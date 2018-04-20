@@ -5,14 +5,33 @@ import models.ThemeModel;
 import models.TopicModel;
 import views.ThemeView;
 import models.ReferenceModel;
-
+/**
+ * 
+ * @author Cameron Cagle & Jeremy Triche
+ *
+ */
 public class ThemeController {
 	ThemeModel model;
 	ThemeView view;
+	ReferenceController ref;
 	
-	public ThemeController(ThemeModel model, ThemeView view) {
+	/** Cameron Cagle: a default constructor */
+	public ThemeController() {
+		this.model = null;
+		this.view = null;
+		this.ref = null;
+	}
+	
+	/**
+	 * Cameron Cagle: a constructor that creates a theme with all fields.
+	 * @param model
+	 * @param view
+	 * @param r
+	 */
+	public ThemeController(ThemeModel model, ThemeView view, ReferenceController r) {
 		this.model = model;
 		this.view = view;
+		this.ref = r;
 	}
 	
 	public String getThemeTitle() {
