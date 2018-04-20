@@ -23,5 +23,5 @@ public interface IMainMenu {
 			return new MainMenuCLInput();
 		return null;
 		
-	}
-}
+	}// end getMenu
+}// end interface

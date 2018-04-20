@@ -1,12 +1,15 @@
 package models;
 
+import interfaces.INoteModel;
+import models.ReferenceModel;
+
 /**
  * This class models the Note entities.
  * 
  * @author Nick
- * @version 3/25/18
+ * @version 4/18/18
  */
-public class NoteModel {
+public class NoteModel implements INoteModel {
     
     /**The title of the Note.*/
     protected String title;
@@ -25,8 +28,7 @@ public class NoteModel {
      * @param reference The Reference to which this Note is attached.
      */
     public NoteModel(String title, String description, ReferenceModel reference) {
-        this.title = title;
-        this.description = description;
+        set(title, description);
         this.reference = reference;
     }
     
@@ -38,6 +40,15 @@ public class NoteModel {
      */
     public NoteModel(String title, String description) {
         this(title, description, null);
+    }
+    
+    /**
+     * The constructor for an empty object.
+     */
+    public NoteModel() {
+        this.title = null;
+        this.description = null;
+        this.reference = null;
     }
     
     //Getters and Setters######################################################
@@ -98,9 +109,24 @@ public class NoteModel {
 
     //Methods##################################################################
     
+    /**
+     * Builds the string version of the object.
+     */
     @Override
     public String toString() {
-        return title + "\n" + description;
+        return "Title: " + title + "\nDescription: " + description;
+    }
+
+    /**
+     * Sets the fields of the object.
+     * 
+     * @param title The new title.
+     * @param description The new description.
+     */
+    @Override
+    public void set(String title, String description) {
+        this.title = title;
+        this.description = description;
     }
     
 }

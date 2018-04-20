@@ -1,5 +1,9 @@
 package interfaces;
-
+/**
+ * 
+ * @author Cameron Cagle
+ * This is the view interface which can work with GUI or CLI.
+ */
 public interface ILibraryView {
 	/** show entry form to the user for input. */
     public void getInputLib();

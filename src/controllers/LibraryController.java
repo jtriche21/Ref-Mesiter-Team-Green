@@ -1,6 +1,7 @@
 package controllers;
 
 import java.util.List;
+
 import models.*;
 import controllers.TopicController;
 import interfaces.*;
@@ -39,12 +40,14 @@ public class LibraryController {
 	}
     
     /** creates a default constructor */
+
     public LibraryController() {
     	this.model = null;
     	this.view = null;
     	this.topic = null;
     }
     
+
     /**
      * a constructor that holds all of the fields of the library controller
      * @param model
