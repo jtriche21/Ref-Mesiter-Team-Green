@@ -6,7 +6,7 @@ package models;
  *@version: 3/22/18
  *This class is the Model for the libraryController class.
  */
-import models.interfaces.*;
+import interfaces.*;
 
 import java.util.List;
 

@@ -6,7 +6,6 @@ import interfaces.IReferenceModel;
 import interfaces.IReferenceView;
 import interfaces.IThemeModel;
 import models.ReferenceModel;
-import models.ThemeModel;
 
 /**
  * @author Tyler McVeigh
@@ -29,6 +28,6 @@ public class ReferenceController {
 	}
 	
 	public void createReferenceView() {
-		this.view.createReference();
+		this.view.getData();
 	}
 }
