@@ -1,9 +1,11 @@
 package controllers;
 
 import java.util.ArrayList;
+
 import models.NoteModel;
 import models.ReferenceModel;
 import views.NoteView;
+import interfaces.INoteView;
 
 /**
  * A controller for the Note class. Stores a list of Notes so we can add,
@@ -18,16 +20,38 @@ public class NoteController {
     /**A list of all Note objects.*/
     private ArrayList<NoteModel> noteList;
     /**The NoteView object.*/
-    private NoteView noteView;
+    private INoteView noteView;
     
     //Constructors#############################################################
     
+    /**
+     * The default constructor.
+     */
     public NoteController() {
         noteList = new ArrayList<NoteModel>();
-        noteView = new NoteView();
+        noteView = new NoteView(null);
     }
     
     //Methods##################################################################
+    
+    /**
+     * Adds a Note from user input.
+     * 
+     * @return Whether or not the add was successful
+     */
+    public boolean addNote() {
+        NoteModel note = new NoteModel();
+        
+        noteView.setData(note);
+        noteView.getInputNote();
+        note = (NoteModel) noteView.getData();
+        
+        if(note.getTitle().equals(""))
+            return false;
+        
+        noteList.add(note);
+        return true;
+    }
     
     /**
      * Checks for valid title, then creates the Note and adds it to noteList 

@@ -3,64 +3,49 @@ package models;
 import interfaces.IArgumentModel;
 import interfaces.IReferenceModel;
 
-public class ArgumentRatingModel {
+public enum ArgumentRatingModel {
 
+    ZERO("Strongly Disagree", 0),
+    ONE("Disagree", 1),
+    TWO("Neutral", 2),
+    THREE("Agree", 3),
+    FOUR("Strongly Agree", 4);
+    
+    /**The string representation of the rating.*/
+    private String term;
+    
+    /**The numerical representation (0-4) of the rating.*/
+    private int rating;
+    
+    /**
+     * The default constructor.
+     * 
+     * @param term The string representation of the rating.
+     * @param rating The numerical representation (0-4) of the rating.
+     */
+    private ArgumentRatingModel(String term, int rating) {
+        this.term = term;
+        this.rating = rating;
+    }
 
-	private IArgumentModel argument;
-	
-	private IReferenceModel reference;
-	
-	private int rating;
-	
-	public ArgumentRatingModel(IArgumentModel argument, IReferenceModel reference, int rating) {
-		
-		this.argument = argument;
-		this.reference = reference;
-		this.rating = rating;
-		
-	}
-	
-		
-	/**
-	 * @return the argument
-	 */
-	public IArgumentModel getArgument() {
-		return argument;
-	}
+    /**
+     * Returns the term.
+     * 
+     * @return the term.
+     */
+    public String getTerm() {
+        return term;
+    }
 
-	/**
-	 * @param argument the argument to set
-	 */
-	public void setArgument(IArgumentModel argument) {
-		this.argument = argument;
-	}
-
-	/**
-	 * @return the reference
-	 */
-	public IReferenceModel getReference() {
-		return reference;
-	}
-
-	/**
-	 * @param reference the reference to set
-	 */
-	public void setReference(IReferenceModel reference) {
-		this.reference = reference;
-	}
-
-	/**
-	 * @return the rating
-	 */
-	public int getRating() {
-		return rating;
-	}
-
-	/**
-	 * @param rating the rating to set
-	 */
-	public void setRating(int rating) {
-		this.rating = rating;
-	}
-	
+    /**
+     * Returns the rating.
+     * 
+     * @return the rating.
+     */
+    public int getRating() {
+        return rating;
+    }
+    
+    
 }
+
