@@ -1,18 +1,44 @@
 package controllers;
 
 import java.util.List;
-
-import models.LibraryModel;
-import models.ThemeModel;
-import models.TopicModel;
-import views.TopicView;
+import models.*;
+import views.*;
+import controllers.*;
+import interfaces.*;
+/**
+ * 
+ * @author Cameron Cagle & Jeremy Triche
+ *
+ */
 
 public class TopicController {
 	private TopicModel model;
 	private TopicView view;
+	private ThemeController theme;
+	private int menuCommand;
 	
-	public TopicController(TopicModel model) {
-		this.model = model;
+	/** CameronC: a default constructor */
+	public TopicController() {
+		this.model = null;
+		this.view = null;
+		this.theme = null;
+	}
+	
+	/** CameronC: this will call the topic menu*/
+	public int menuSelection() {
+		ITopicMenu topicMenu = ITopicMenu.getMenu(ITopicMenu.MENU_TYPE_CLI);
+		menuCommand = topicMenu.getChoice();
+	
+		if(menuCommand == 1) {
+			return menuCommand;
+		}
+		else if(menuCommand == 2) {
+			return menuCommand;
+		}
+		else if(menuCommand == 3) {
+			return menuCommand;
+		}
+		return 0;
 	}
 	
 	public String getTopicTitle() {

@@ -1,8 +1,3 @@
-/**
- *@author: Green Team
- *@version: 3/21/18 
- *This class is the controller class for our library.
- */
 package controllers;
 
 import java.util.List;
@@ -10,47 +5,64 @@ import java.util.List;
 import models.*;
 import controllers.TopicController;
 import interfaces.*;
-import views.*;
 
 /**
  * 
- * @author Cagle
- * Controls the library view, edit, add, save, and delete functions
+ * @author Cameron Cagle
+ * A class that controls the library data, menu, and view
  */
 public class LibraryController {
 	/** library model object */
 	LibraryModel model;
 	/** library view interface object */
     ILibraryView view;
-    /** has a topic controller */
-    TopicController t;
-    /** contains the menu command */
+    /** a topic controller*/
+    TopicController topic;
+   
     private int menuCommand;
-    
-    ILibMenu libraryMenu = ILibMenu.getMenu(ILibMenu.MENU_TYPE_CLI);
-    libraryMenu = libMenu.getChoice();
-    
-    
     /** instance of a LibraryController */
     private static LibraryController instance;
     
-    /** creates a default constructor of the library controller. */
+    /** function that will return menu selection*/
+    public int menuSelection() {
+    	ILibMenu libMenu = ILibMenu.getMenu(IMainMenu.MENU_TYPE_CLI);
+    	menuCommand = libMenu.getChoice();
+    	if(menuCommand == 1) {
+    		return menuCommand;
+    	}
+    	else if(menuCommand == 2) {
+    		return menuCommand;
+    	}
+    	else if(menuCommand == 3) {
+    		return menuCommand;
+    	}
+    	return 0;
+	}
+    
+    /** creates a default constructor */
+
     public LibraryController() {
     	this.model = null;
     	this.view = null;
-    	this.t = null;
+    	this.topic = null;
     }
     
-    /** creates a constructor that has all fields. */
+
+    /**
+     * a constructor that holds all of the fields of the library controller
+     * @param model
+     * @param view
+     * @param t: topic controller object
+     */
     public LibraryController(LibraryModel model,  ILibraryView view, TopicController t) {
-        this.model = model; 
-        this.view = view; 
-        this.t = t; 
-    } 
-     
-    /** 
-     * gets an instance of library controller.
-     * @return
+        this.model = model;
+        this.view = view;
+        this.topic = t;
+    }
+    
+    /**
+     * gets one instance of a library controller 
+     * @return instance: instance of a library controller
      */
     public static LibraryController getInstance() {
     	if(instance == null) 
@@ -59,7 +71,7 @@ public class LibraryController {
     }
     
     /**
-     * gets the library model.
+     * gets the library model
      * @return model
      */
     public LibraryModel getLibraryModel(){
@@ -67,15 +79,15 @@ public class LibraryController {
     }
     
     /**
-     * sets the library model.
+     * sets the library model
      * @param model
      */
     public void setLibraryModel(LibraryModel model){
         this.model = model;
     }
-   
-    /**
-     * gets the library view  
+    
+    /** 
+     * gets the library view 
      * @return view
      */
     public ILibraryView getLibraryView(){
@@ -91,20 +103,21 @@ public class LibraryController {
     }
     
     /**
-     * gets the list of topics under the library 
-     * @return the list of topics.
-     */  
+     * gets the list of topics under a the current library object
+     * @return list of topics
+     */
     public List<TopicModel> getLibraryTopicList(){
         return model.getTopicList();
     }
     
     /**
-     * sets the topic list for the specific library
+     * sets the list of topics for the library
      * @param topicList
      */
     public void setLibraryTopicList(List<TopicModel> topicList){
         model.setTopicList(topicList);
     }
 }
+
 
 
