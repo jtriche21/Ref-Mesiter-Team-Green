@@ -1,23 +1,38 @@
 package views;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import controllers.NoteController;
+import interfaces.INoteModel;
 import interfaces.INoteView;
 import models.NoteModel;
-
-//TODO Use controller instead of model
 
 /**
  * A view class for the viewing and printing of Note objects.
  * 
  * @author Nick Ruby
- * @version 3/25/18
+ * @version 4/18/18
  */
 public class NoteView implements INoteView{
     
+    /**The note object.*/
+    private INoteModel note;
+    /**The scanner object to get user input.*/
+    private Scanner scanIn;
+    
     /**
-     * Prints out one Note.
+     * The default constructor.
+     * 
+     * @param note The new note object.
+     */
+    public NoteView(INoteModel note) {
+        this.note = note;
+        scanIn = new Scanner(System.in);
+    }
+    
+    /**
+     * Prints out a certain Note.
      * 
      * @param note The note to print.
      */
@@ -43,5 +58,39 @@ public class NoteView implements INoteView{
         }
         
         System.out.println(printString);
+    }
+
+    /**
+     * Gets user input and set the notes fields.
+     */
+    @Override
+    public void getInputNote() {
+        System.out.println("Note Title: ");
+        String title = scanIn.nextLine();
+        
+        System.out.println("Note Description: ");
+        String description = scanIn.nextLine();
+        
+        note.set(title, description);
+    }
+
+    /**
+     * Returns the note object.
+     * 
+     * @return The note object.
+     */
+    @Override
+    public INoteModel getData() {
+        return note;
+    }
+
+    /**
+     * Sets the note object.
+     * 
+     * @param note The new note object.
+     */
+    @Override
+    public void setData(INoteModel note) {
+        this.note = note;
     }
 }
