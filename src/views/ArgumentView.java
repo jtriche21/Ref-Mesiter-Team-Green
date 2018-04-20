@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import interfaces.IArgumentModel;
 import interfaces.IArgumentView;
-import models.ArgumentRatingModel;;
+import models.ArgumentRatingModel;
 
 public class ArgumentView implements IArgumentView {
 

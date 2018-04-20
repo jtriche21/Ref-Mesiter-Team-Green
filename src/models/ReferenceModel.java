@@ -12,6 +12,8 @@ import java.util.List;
 
 import interfaces.IReferenceModel;
 import interfaces.IThemeModel;
+import interfaces.IIdeaModel;
+import interfaces.INoteModel;
 
 import java.util.ArrayList;
 
@@ -25,10 +27,10 @@ public class ReferenceModel implements IReferenceModel {
     private String publisher;
     private String publicationDate;
     private String location;
-    private List<IdeaModel> ideaList;
+    private List<IIdeaModel> ideaList;
     private List<ArgumentRatingModel> argumentList;
-    private List<NoteModel> noteList;
-    private IhemeModel owner;
+    private List<INoteModel> noteList;
+    private IThemeModel owner;
 
     /**
      * Creates a reference instance from an array of authors, the source title,
@@ -49,9 +51,9 @@ public class ReferenceModel implements IReferenceModel {
         this.volumeNumber = "";
         this.publisher = "";
         this.location = "";
-        this.ideaList = new ArrayList<IdeaModel>();
+        this.ideaList = new ArrayList<IIdeaModel>();
         this.argumentList = new ArrayList<ArgumentRatingModel>();
-        this.noteList = new ArrayList<NoteModel>();
+        this.noteList = new ArrayList<INoteModel>();
 
     }
 
@@ -60,7 +62,7 @@ public class ReferenceModel implements IReferenceModel {
      *
      * @param owner The Theme object that this reference instance is a member of
      */
-    public ReferenceModel(ThemeModel owner) {
+    public ReferenceModel(IThemeModel owner) {
         this.authors = new ArrayList<String>();
         this.sourceTitle = "";
         this.publicationDate = "";
@@ -70,10 +72,25 @@ public class ReferenceModel implements IReferenceModel {
         this.volumeNumber = "";
         this.publisher = "";
         this.location = "";
-        this.ideaList = new ArrayList<IdeaModel>();
+        this.ideaList = new ArrayList<IIdeaModel>();
         this.argumentList = new ArrayList<ArgumentRatingModel>();
-        this.noteList = new ArrayList<NoteModel>();
+        this.noteList = new ArrayList<INoteModel>();
     }
+    
+    	@Override
+	public void set(String title, String author, String publicationDate, String publisher, 
+					String version, String volumeNumber, String containerTitle, 
+					String location) {
+    		
+		this.sourceTitle = title;
+		this.addAuthor(author);
+		this.publicationDate = publicationDate;
+		this.publisher = publisher;
+		this.version = version;
+		this.volumeNumber = volumeNumber;
+		this.containerTitle = containerTitle;
+		this.location = location;
+	}
 
     /**
      * Adds Idea to the reference instance's list of ideas
@@ -116,7 +133,7 @@ public class ReferenceModel implements IReferenceModel {
      *
      * @param item the note to be added
      */
-    public void addNote(NoteModel item){
+    public void addNote(INoteModel item){
         this.noteList.add(item);
     }
 
@@ -125,7 +142,7 @@ public class ReferenceModel implements IReferenceModel {
      *
      * @param item the note to be removed
      */
-    public void removeNote(NoteModel item){
+    public void removeNote(INoteModel item){
         this.noteList.remove(item);
     }
 
@@ -288,7 +305,7 @@ public class ReferenceModel implements IReferenceModel {
      *
      * @return The owning theme
      */
-    public ThemeModel getOwner() {
+    public IThemeModel getOwner() {
         return owner;
     }
 
@@ -297,7 +314,7 @@ public class ReferenceModel implements IReferenceModel {
      *
      * @param owner the new owning theme
      */
-    public void setOwner(ThemeModel owner) {
+    public void setOwner(IThemeModel owner) {
         this.owner = owner;
     }
 
@@ -323,4 +340,6 @@ public class ReferenceModel implements IReferenceModel {
                 ", owner=" + owner +
                 '}';
     }
+
+
 }
