@@ -13,7 +13,7 @@ public interface IIdeaModel {
 	
 	public List<ReferenceModel> getAssociatedReferences();
 	
-	public void addReference(ReferenceModel reference);
+	public void addReference(IReferenceModel reference);
 	
-	public void removeReference(ReferenceModel reference);
+	public void removeReference(IReferenceModel reference);
 }
