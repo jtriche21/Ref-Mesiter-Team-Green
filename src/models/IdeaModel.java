@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import interfaces.IIdeaModel;
+import interfaces.IReferenceModel;
 
 /**
  * @author Tyler McVeigh
@@ -16,7 +17,7 @@ public class IdeaModel implements IIdeaModel{
 	
 	public String title;
 	public String description;
-	public List<ReferenceModel> references;
+	public List<IReferenceModel> references;
 	
 	/**
 	 * The constructor for assigning a list of references to this idea
@@ -25,7 +26,7 @@ public class IdeaModel implements IIdeaModel{
 	 * @param title the title of the idea object
 	 * @param description the description of the idea object
 	 */
-	public IdeaModel(List<ReferenceModel> references, String title, String description) {
+	public IdeaModel(List<IReferenceModel> references, String title, String description) {
 		this.references = references;
 		this.title = title;
 		this.description = description;
@@ -38,8 +39,8 @@ public class IdeaModel implements IIdeaModel{
 	 * @param title the title of the idea object
 	 * @param description the description of the idea object
 	 */
-	public IdeaModel(ReferenceModel reference, String title, String description) {
-		this.references = new ArrayList<ReferenceModel>();
+	public IdeaModel(IReferenceModel reference, String title, String description) {
+		this.references = new ArrayList<IReferenceModel>();
 		this.references.add(reference);
 		this.title = title;
 		this.description = description;
@@ -82,17 +83,20 @@ public class IdeaModel implements IIdeaModel{
 	}
 
 	@Override
-	public List<ReferenceModel> getAssociatedReferences() {
+	public  List<IReferenceModel> getAssociatedReferences() {
 		return this.references;
 	}
 
+
 	@Override
-	public void addReference(ReferenceModel reference) {
+	public void addReference(IReferenceModel reference) {
 		this.references.add(reference);
+		
 	}
-	
+
 	@Override
-	public void removeReference(ReferenceModel reference) {
+	public void removeReference(IReferenceModel reference) {
+
 		this.references.remove(reference);
 	}
 }
