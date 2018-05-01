@@ -1,20 +1,91 @@
 package controllers;
 
 import java.util.List;
-
-import interfaces.IReferenceModel;
-import interfaces.IReferenceView;
-import interfaces.IThemeModel;
-import models.ReferenceModel;
+import interfaces.*;
+import models.*;
+import views.*;
+import controllers.*;
 
 /**
  * @author Tyler McVeigh
  */
 public class ReferenceController {
-	//TODO Make Reference Controller class
-	
 	public IReferenceModel reference;
+	
 	public IReferenceView view;
+	
+	private int noteCommand;
+	
+	private int ideaCommand;
+	
+	private int argumentCommand;
+
+	private int menuCommand;
+
+	ArgumentController arg;
+	
+	IdeaController idea;
+
+	NoteController note;
+	
+	/** Cameron C.
+	 *
+	 * @param choice
+	 */
+	public void refSelection(int choice) {
+		if(choice == 1) {
+			IdeaController idea = new IdeaController();
+			ideaCommand = idea.menuSelection();
+			idea.ideaSelection(ideaCommand);
+		}
+		else if (choice == 2) {
+		    //	view idea
+		}
+		if(choice == 3) {
+			NoteController note = new NoteController();
+			noteCommand = note.menuSelection();
+			note.noteSelection(noteCommand);
+		}
+		else if (choice == 4) {
+			// view note 
+		}
+		else if (choice == 5) {
+			ArgumentController arg = new ArgumentController();
+			argumentCommand = arg.menuSelection();
+			arg.argSelection(argumentCommand);
+		}
+		else if(choice == 6) {
+			// view argument
+		}
+		else if(choice == 7) { 
+			System.exit(1);
+		}
+	}
+	
+	/** CameronC: this will call the topic menu*/
+	public int menuSelection() {
+		IReferenceMenu refMenu = IReferenceMenu.getMenu(IReferenceMenu.MENU_TYPE_CLI);
+		menuCommand = refMenu.getChoice();
+	
+		if(menuCommand == 1) {
+			return menuCommand;
+		}
+		else if(menuCommand == 2) {
+			return menuCommand;
+		}
+		else if(menuCommand == 3) {
+			return menuCommand;
+		}
+		return 0;
+	}
+	
+	public ReferenceController() {
+		this.reference = null;
+		this.view = null;
+		this.idea = null;
+		this.note = null;
+		this.argument = null;
+	}
 	
 	public ReferenceController(IReferenceModel reference, IReferenceView view) {
 		this.reference = reference;

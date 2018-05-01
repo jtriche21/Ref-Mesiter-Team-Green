@@ -18,7 +18,7 @@ public class TopicMenuCLInput implements ITopicMenu {
 	 */
 	public int getChoice() {
 		System.out.println("Topic Menu\n Please enter a command: ");
-		System.out.println("1: Create New Topic\n 2: View Topic\n"
+		System.out.println("1: Create New \n 2: View Topic\n"
 						   + "3: Exit Program");
 		
 		while(true) {

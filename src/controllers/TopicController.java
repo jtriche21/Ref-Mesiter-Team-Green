@@ -16,6 +16,7 @@ public class TopicController {
 	private TopicView view;
 	private ThemeController theme;
 	private int menuCommand;
+	private int themeCommand;
 	
 	/** CameronC: a default constructor */
 	public TopicController() {
@@ -24,6 +25,25 @@ public class TopicController {
 		this.theme = null;
 	}
 	
+	/**
+	 * a method that creates or views a library, will also exit if needed.
+	 * @param choice 1: create library, 2: view library, 3: exit
+	 */
+	public void topicSelection(int choice) {
+		if(choice == 1) {
+			ThemeController theme = new ThemeController();
+			themeCommand = theme.menuSelection();
+			theme.themeSelection(themeCommand);
+		}
+		else if(choice == 2) {
+			
+			
+		}
+		else if(choice == 3) {
+			
+			
+		}
+	}
 	/** CameronC: this will call the topic menu*/
 	public int menuSelection() {
 		ITopicMenu topicMenu = ITopicMenu.getMenu(ITopicMenu.MENU_TYPE_CLI);

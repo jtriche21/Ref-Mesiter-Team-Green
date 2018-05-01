@@ -1,13 +1,6 @@
 package interfaces;
 
-import controllers.*;
-import views.MainMenuCLInput;
-/**
- * 
- * @author Cagle
- * A interface that selects the type of menu used for the program
- */
-public interface IMainMenu {
+public interface IThemeMenu {
 	/** makes CLI and GUI menu types */
 	public static int MENU_TYPE_CLI = 111, MENU_TYPE_GUI = 112;
 	/** gets the menu selection from the user */
@@ -18,12 +11,12 @@ public interface IMainMenu {
 	 * @param menu_type
 	 * @return: MainMenuCLInput: a command line input for the main menu
 	 */
-	public static IMainMenu getMenu(int menu_type) {
+	public static IThemeMenu getMenu(int menu_type) {
 		if(menu_type == MENU_TYPE_CLI)
-			return new MainMenuCLInput();
+			return new ThemeMenuCLInput();
 		//else if(menu_type == MENU_TYPE_GUI)
-		//	  return new MainMenuGUI();
+		//	  return new ThemeMenuGUI();
 		return null;
 		
 	}// end getMenu
-}// end interface
+}

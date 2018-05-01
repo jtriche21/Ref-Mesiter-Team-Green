@@ -1,11 +1,10 @@
 package controllers;
 
 import java.util.ArrayList;
-
-import models.NoteModel;
-import models.ReferenceModel;
-import views.NoteView;
-import interfaces.INoteView;
+import models.*;
+import views.*;
+import interfaces.*;
+import controllers.*;
 
 /**
  * A controller for the Note class. Stores a list of Notes so we can add,
@@ -21,6 +20,24 @@ public class NoteController {
     private ArrayList<NoteModel> noteList;
     /**The NoteView object.*/
     private INoteView noteView;
+    
+    private int menuCommand;
+    
+    public int menuSelection() {
+    	INoteMenu noteMenu = INoteMenu.getMenu(INoteMenu.MENU_TYPE_CLI);
+    	menuCommand = noteMenu.getChoice();
+    	
+    	if(menuCommand == 1) {
+			return menuCommand;
+		}
+		else if(menuCommand == 2) {
+			return menuCommand;
+		}
+		else if(menuCommand == 3) {
+			return menuCommand;
+		}
+		return 0;
+    }
     
     //Constructors#############################################################
     

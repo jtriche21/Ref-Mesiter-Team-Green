@@ -3,8 +3,9 @@ package controllers;
 import java.util.List;
 
 import models.*;
-import controllers.TopicController;
+import controllers.*;
 import interfaces.*;
+import views.*;
 
 /**
  * 
@@ -18,10 +19,23 @@ public class LibraryController {
     ILibraryView view;
     /** a topic controller*/
     TopicController topic;
-   
+    /** command returned from menu selection */
+    private int topicCommand;
+    
     private int menuCommand;
     /** instance of a LibraryController */
     private static LibraryController instance;
+    
+    public void libSelection(int choice) {
+    	if(choice == 1) {
+    		TopicController topic = new TopicController();
+    		topicCommand = topic.menuSelection();
+    		topic.topicSelection(topicCommand);
+    	}
+    	else if (choice == 2) {
+    		
+    	}
+    }
     
     /** function that will return menu selection*/
     public int menuSelection() {

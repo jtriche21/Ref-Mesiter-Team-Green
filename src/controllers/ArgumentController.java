@@ -1,12 +1,10 @@
 package controllers;
 
 import java.util.ArrayList;
-
-import interfaces.IArgumentView;
-import models.ArgumentModel;
-import models.ArgumentRatingModel;
-import models.ReferenceModel;
-import views.ArgumentView;
+import interfaces.*;
+import models.*;
+import views.*;
+import controllers.*;
 
 
 /**
@@ -21,6 +19,25 @@ public class ArgumentController {
     private ArrayList<ArgumentModel> arguments;
     /**Reference to the view object.*/
     private IArgumentView view;
+    
+    private int menuCommand;
+    
+    public int menuSelection() {
+    	IArgumentMenu argMenu = IArgumentMenu.getMenu(IArgumentMenu.MENU_TYPE_CLI);
+    	menuCommand = argMenu.getChoice();
+    	
+    	if(menuCommand == 1) {
+			return menuCommand;
+		}
+		else if(menuCommand == 2) {
+			return menuCommand;
+		}
+		else if(menuCommand == 3) {
+			return menuCommand;
+		}
+		return 0;
+    }
+    
     
     /**
      * The default constructor.
