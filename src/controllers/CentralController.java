@@ -12,18 +12,29 @@ public class CentralController {
 	private int menuCommand; 
 	private int libCommand;
 	// I don't understand what the error I'm getting is?
-	IMainMenu mainMenu = IMainMenu.getMenu(IMainMenu.MENU_TYPE_CLI);
-	menuCommand = mainMenu.getChoice();
 	
-	// this will choose the correct command based off of user input.
-	if (menuCommand == 1) { 
-		//Create library
-		LibraryController lib = new LibraryController();
-		libCommand = lib.menuSelection();
+	public void mainSelection(int choice) {
+		if(choice == 1) {
+			LibraryController lib = new LibraryController();
+			libCommand = lib.menuSelection();
+			lib.libSelection(libCommand);
+		}
+		else if (choice == 2) {
+			//Exit Program
+			System.exit(1);
+		}
 	}
-	else if (menuCommand == 2) {
-		//Exit Program
-		System.exit(1);
+	
+	public int menuSelection() {
+		IMainMenu mainMenu = IMainMenu.getMenu(IMainMenu.MENU_TYPE_CLI);
+		menuCommand = mainMenu.getChoice();
+		if(menuCommand == 1)
+			return menuCommand;
+		else if(menuCommand == 2)
+			return menuCommand;
+		else 
+			return 0;
 	}
-}	
+}
+
 

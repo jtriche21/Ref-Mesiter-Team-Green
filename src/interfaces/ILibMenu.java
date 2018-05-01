@@ -19,6 +19,8 @@ public interface ILibMenu {
 	public static ILibMenu getMenu(int menuType) {
 		if(menuType == MENU_TYPE_CLI)
 			return new LibMenuCLInput();
+		//else if(menuType == MENU_TYPE_GUI)
+		//	  return new LibMenuGUI();
 		return null;
 	}
 		

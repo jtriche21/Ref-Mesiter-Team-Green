@@ -19,6 +19,8 @@ public interface ITopicMenu {
 	public static ITopicMenu getMenu(int menu_type) {
 		if(menu_type == MENU_TYPE_CLI)
 			return new TopicMenuCLInput();
+		//else if(menu_type == MENU_TYPE_GUI)
+		//	return new TopicMenuGUI();
 		return null;
 		
 	}

@@ -1,16 +1,18 @@
 /**
  * 
- * @author Cagle
+ * @author Cameron Cagle
  * This class will run our reference miester.
  */
 import controllers.*;
 
 public class Driver {
-
 	
+	private static int menuCommand;
 	public static void main(String[] args) {
 		
 		CentralController ctrl = new CentralController();
+		menuCommand = ctrl.menuSelection();
+		ctrl.mainSelection(menuCommand);
 	}
 		
 

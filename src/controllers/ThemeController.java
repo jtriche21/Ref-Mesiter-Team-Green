@@ -1,10 +1,10 @@
 package controllers;
 
 import java.util.List;
-import models.ThemeModel;
-import models.TopicModel;
-import views.ThemeView;
-import models.ReferenceModel;
+import views.*;
+import controllers.*;
+import models.*;
+import interfaces.*;
 /**
  * 
  * @author Cameron Cagle & Jeremy Triche
@@ -13,8 +13,36 @@ import models.ReferenceModel;
 public class ThemeController {
 	ThemeModel model;
 	ThemeView view;
-	ReferenceController ref;
+	ReferenceController  ref;
+	private int menuCommand;
+	private int refCommand;
 	
+	/** Cameron C.*/
+	public void themeSelection(int choice) {
+		if(choice == 1) {
+			ReferenceController ref = new ReferenceController();
+			refCommand = ref.menuSelection();
+			ref.refSelection(refCommand);
+		}
+		else if (choice == 2) {
+			//view theme
+		}
+		else if(choice  == 3) {
+			System.exit(1);
+		}
+	}
+	
+	/** Cameron C. */
+	public int menuSelection() {
+		IThemeMenu themeMenu = IThemeMenu.getMenu(IThemeMenu.MENU_TYPE_CLI);
+		menuCommand = themeMenu.getChoice();
+		if(menuCommand == 1)
+			return menuCommand;
+		else if(menuCommand == 2)
+			return menuCommand;
+		else 
+			return 0;
+	}
 	/** Cameron Cagle: a default constructor */
 	public ThemeController() {
 		this.model = null;

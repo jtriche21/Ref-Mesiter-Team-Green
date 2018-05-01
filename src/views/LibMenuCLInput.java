@@ -20,7 +20,7 @@ public class LibMenuCLInput implements ILibMenu{
 	 */
 	public int getChoice() {
 		System.out.println("Library Menu\n Please enter a command: ");
-		System.out.println("1: Create New Library\n 2: View Library\n"
+		System.out.println("1: Create New topic\n 2: View topic\n"
 						   + "3: Exit Program");
 		
 		while(true) {
