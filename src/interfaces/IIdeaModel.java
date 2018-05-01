@@ -11,7 +11,7 @@ public interface IIdeaModel {
 	
 	public String getDescription();
 	
-	public List<ReferenceModel> getAssociatedReferences();
+	public List<IReferenceModel> getAssociatedReferences();
 	
 	public void addReference(IReferenceModel reference);
 	
