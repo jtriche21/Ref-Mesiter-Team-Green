@@ -10,6 +10,10 @@ public interface IIdeaModel {
 	public String getTitle();
 	
 	public String getDescription();
+
+	public void setTitle(String title);
+	
+	public void setDescription(String description);
 	
 	public List<IReferenceModel> getAssociatedReferences();
 	

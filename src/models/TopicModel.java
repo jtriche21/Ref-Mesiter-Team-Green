@@ -1,12 +1,13 @@
 package models;
 import java.util.List;
+import interfaces.*;
 
 /**
  * 
  * @author Cagle
  *
  */
-public class TopicModel {
+public class TopicModel implements ITopicModel{
 	/** list of Themes. */
 	private List<ThemeModel> ThemeList;
 	/** owner of the topic. */
@@ -38,5 +39,8 @@ public class TopicModel {
 	public void setThemeList(List<ThemeModel> themeList) {
 		ThemeList = themeList;
 	}
- 
+	public void set(String title, String description) {
+		setTitle(title);
+		setDescription(description);
+	}
 }

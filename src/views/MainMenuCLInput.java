@@ -20,7 +20,7 @@ public class MainMenuCLInput implements IMainMenu {
 	 */
 	public int getChoice() {
 		System.out.println("Welcome to Reference Meister!\n");
-		System.out.println("Please enter a command\n1: Create Library\n"
+		System.out.println("Please enter a command\n1: Create Library\n" 
 						   + "2: Exit");
 		while(true) { 
 			if(kB.nextInt() == 1) { 

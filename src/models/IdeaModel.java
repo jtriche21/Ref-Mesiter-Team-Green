@@ -3,10 +3,12 @@ package models;
 
 
 import java.util.ArrayList;
+
 import java.util.List;
 
-import interfaces.IIdeaModel;
-import interfaces.IReferenceModel;
+
+import interfaces.*;
+
 
 /**
  * @author Tyler McVeigh
@@ -39,6 +41,7 @@ public class IdeaModel implements IIdeaModel{
 	 * @param title the title of the idea object
 	 * @param description the description of the idea object
 	 */
+
 	public IdeaModel(IReferenceModel reference, String title, String description) {
 		this.references = new ArrayList<IReferenceModel>();
 		this.references.add(reference);
@@ -83,7 +86,7 @@ public class IdeaModel implements IIdeaModel{
 	}
 
 	@Override
-	public  List<IReferenceModel> getAssociatedReferences() {
+	public List<IReferenceModel> getAssociatedReferences() {
 		return this.references;
 	}
 
@@ -96,7 +99,6 @@ public class IdeaModel implements IIdeaModel{
 
 	@Override
 	public void removeReference(IReferenceModel reference) {
-
 		this.references.remove(reference);
 	}
 }

@@ -22,6 +22,18 @@ public class ArgumentController {
     
     private int menuCommand;
     
+    public void argSelection(int choice) {
+    	if(choice == 1) {
+    		// edit 
+    	}
+    	else if(choice == 2) {
+    		model.
+    	}
+    	else if(choice == 3) {
+    		System.exit(1);
+    	}
+    }
+    
     public int menuSelection() {
     	IArgumentMenu argMenu = IArgumentMenu.getMenu(IArgumentMenu.MENU_TYPE_CLI);
     	menuCommand = argMenu.getChoice();
