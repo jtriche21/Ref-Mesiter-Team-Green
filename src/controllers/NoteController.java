@@ -23,6 +23,18 @@ public class NoteController {
     
     private int menuCommand;
     
+    public void noteSelection(int choice) {
+    	if (choice == 1) { 
+    		//edit
+    	}
+    	else if(choice == 2) {
+    		//delete
+    	}
+    	else if(choice == 3) {
+    		System.exit(1);
+    	}
+    }
+    
     public int menuSelection() {
     	INoteMenu noteMenu = INoteMenu.getMenu(INoteMenu.MENU_TYPE_CLI);
     	menuCommand = noteMenu.getChoice();

@@ -92,8 +92,5 @@ public class ThemeController {
 	public void setThemeReferenceList(List<ReferenceModel> referenceList) {
 		model.setReferenceList(referenceList);
 	}
-	public void printThemeInformation() {
-		view.printThemeInformation(model.getDescription(), model.getTitle(), model.getOwner(), 
-										model.getOwner(), model.getReferenceList());
-	}
+	
 }

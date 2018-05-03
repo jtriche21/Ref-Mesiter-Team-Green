@@ -20,7 +20,6 @@ public class CentralController {
 			lib.libSelection(libCommand);
 		}
 		else if (choice == 2) {
-			//Exit Program
 			System.exit(1);
 		}
 	}

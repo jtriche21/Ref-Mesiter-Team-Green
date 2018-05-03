@@ -33,7 +33,10 @@ public class LibraryController {
     		topic.topicSelection(topicCommand);
     	}
     	else if (choice == 2) {
-    		
+    		view.getInputLib();
+    	}
+    	else if (choice == 3) {
+    		System.exit(1);
     	}
     }
     

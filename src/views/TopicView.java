@@ -1,6 +1,7 @@
 package views;
 import java.util.Scanner;
 
+import models.*;
 import interfaces.ITopicModel;
 import interfaces.ITopicView;
 
@@ -18,6 +19,8 @@ public class TopicView implements ITopicView {
 	/** The scanner used for user input */
 	Scanner s;
 	
+	TopicView view;
+	
 	/**
 	 * Instantiates a new topic view and creates a new scanner for the keyboard
 	 *
@@ -27,6 +30,13 @@ public class TopicView implements ITopicView {
 		s = new Scanner(System.in);
 		this.topic = topic;
 		
+	}
+	
+	/**
+	 * 
+	 */
+	public TopicView() {
+		this.view = null;
 	}
 	
 	/** 

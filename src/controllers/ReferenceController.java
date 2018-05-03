@@ -33,30 +33,25 @@ public class ReferenceController {
 	 * @param choice
 	 */
 	public void refSelection(int choice) {
-		if(choice == 1) {
-			IdeaController idea = new IdeaController();
-			ideaCommand = idea.menuSelection();
-			idea.ideaSelection(ideaCommand);
+		if(subList == 0) {
+			if(choice == -1) {
+				IdeaController idea = new IdeaController();
+				ideaCommand = idea.menuSelection();
+				idea.ideaSelection(ideaCommand);
 		}
-		else if (choice == 2) {
-		    //	view idea
+		else if(subList == 1) {
+			if(choice == -1) {
+				NoteController note = new NoteController();
+				noteCommand = note.menuSelection();
+				note.noteSelection(noteCommand);
+			}
 		}
-		if(choice == 3) {
-			NoteController note = new NoteController();
-			noteCommand = note.menuSelection();
-			note.noteSelection(noteCommand);
-		}
-		else if (choice == 4) {
-			// view note 
-		}
-		else if (choice == 5) {
-			ArgumentController arg = new ArgumentController();
-			argumentCommand = arg.menuSelection();
-			arg.argSelection(argumentCommand);
-		}
-		else if(choice == 6) {
-			// view argument
-		}
+		else if(subList == 2) {
+			if (choice == -1) {
+				ArgumentController arg = new ArgumentController();
+				argumentCommand = arg.menuSelection();
+				arg.argSelection(argumentCommand);
+			}
 		else if(choice == 7) { 
 			System.exit(1);
 		}
@@ -84,12 +79,13 @@ public class ReferenceController {
 		this.view = null;
 		this.idea = null;
 		this.note = null;
-		this.argument = null;
+		this.arg = null;
 	}
 	
 	public ReferenceController(IReferenceModel reference, IReferenceView view) {
 		this.reference = reference;
 		this.view = view;
+		
 	}
 	
 	public IReferenceModel createReference(List<String> authors, String sourceTitle, 

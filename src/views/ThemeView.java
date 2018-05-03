@@ -51,4 +51,5 @@ public class ThemeView {
 	public IThemeModel getThemeData() {
 		return this.theme;
 	}
+	
 }
