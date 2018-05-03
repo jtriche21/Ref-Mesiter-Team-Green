@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @author Nick
  *
  */
-public interface IGUIFactoryTypeA {
+public interface IGUIFactory {
     public final static int SAVE = 1;
     public final static int DELETE = 2;
     public final static int SUBITEM = 3;
