@@ -5,10 +5,10 @@ package controllers;
  *
  */
 public interface IControllerListenerTypeA {
-    public final static int SAVE = 1;
-    public final static int DELETE = 2;
-    public final static int SUBITEM = 3; //Not needed
-    public final static int EDIT = 4;
+    public final static int ADD = 1;
+    public final static int EDIT = 2;
+    public final static int DELETE = 3;
+    public final static int SAVE = 4;
     public final static int BACK = 5;
     public final static int MAIN = 6;
     
