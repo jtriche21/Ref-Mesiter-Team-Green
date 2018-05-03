@@ -1,6 +1,9 @@
 package models;
 import java.util.List;
 
+import interfaces.ILibraryModel;
+import interfaces.IThemeModel;
+
 /**
  * 
  * @author Cagle
@@ -8,16 +11,16 @@ import java.util.List;
  */
 public class TopicModel {
 	/** list of Themes. */
-	private List<ThemeModel> ThemeList;
+	private List<IThemeModel> ThemeList;
 	/** owner of the topic. */
-	private LibraryModel owner;
+	private ILibraryModel owner;
 	private String title;
 	private String description;
 	
-	public LibraryModel getOwner() {
+	public ILibraryModel getOwner() {
 		return owner;
 	}
-	public void setOwner(LibraryModel owner) {
+	public void setOwner(ILibraryModel owner) {
 		this.owner = owner;
 	}
 	public String getTitle() {
@@ -32,11 +35,14 @@ public class TopicModel {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public List<ThemeModel> getThemeList() {
+	public List<IThemeModel> getThemeList() {
 		return ThemeList;
 	}
-	public void setThemeList(List<ThemeModel> themeList) {
+	public void setThemeList(List<IThemeModel> themeList) {
 		ThemeList = themeList;
+	}
+	public boolean addTheme(IThemeModel theme) {
+		return ThemeList.add(theme);
 	}
  
 }

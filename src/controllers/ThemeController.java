@@ -74,22 +74,16 @@ public class ThemeController {
 	public void setThemeDescription(String description) {
 		model.setDescription(description);
 	}
-	public TopicModel getThemeTopic() {
-		return model.getTopic();
-	}
-	public void setThemeTopic(TopicModel topic) {
-		model.setTopic(topic);
-	}
-	public TopicModel getThemeOwner() {
+	public ITopicModel getThemeOwner() {
 		return model.getOwner();
 	}
-	public void setThemeOwner(TopicModel owner) {
+	public void setThemeOwner(ITopicModel owner) {
 		model.setOwner(owner);
 	}
-	public List<ReferenceModel> getThemeReferenceList() {
+	public List<IReferenceModel> getThemeReferenceList() {
 		return model.getReferenceList();
 	}
-	public void setThemeReferenceList(List<ReferenceModel> referenceList) {
+	public void setThemeReferenceList(List<IReferenceModel> referenceList) {
 		model.setReferenceList(referenceList);
 	}
 	public void printThemeInformation() {

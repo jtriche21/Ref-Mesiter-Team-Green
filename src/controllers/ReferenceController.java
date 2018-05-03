@@ -84,7 +84,7 @@ public class ReferenceController {
 		this.view = null;
 		this.idea = null;
 		this.note = null;
-		this.argument = null;
+		this.arg = null;
 	}
 	
 	public ReferenceController(IReferenceModel reference, IReferenceView view) {
