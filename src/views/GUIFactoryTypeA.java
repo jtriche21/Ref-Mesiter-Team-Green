@@ -5,6 +5,7 @@ package views;
 
 import java.util.ArrayList;
 
+import controllers.IControllerListenerTypeA;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -35,10 +36,15 @@ public class GUIFactoryTypeA implements IGUIFactory {
     protected VBox center;
     
     protected Button back, main, add, delete, edit, save;
+    protected Button[] buttons;
     protected ListView<String> subList;
     
-    public GUIFactoryTypeA(String type, String title, String description, ArrayList<String> subItems) {
+    protected IControllerListenerTypeA listener;
+    
+    public GUIFactoryTypeA(IControllerListenerTypeA listener, String type, 
+            String title, String description, ArrayList<String> subItems) {
         set(type, title, description, subItems);
+        this.listener = listener;
         root = new BorderPane();
         
         top = new HBox();
@@ -52,13 +58,17 @@ public class GUIFactoryTypeA implements IGUIFactory {
         root.setBottom(bottom);
         root.setCenter(center);
         
+        
         makeTop();
         makeBottom();
         makeCenter();
+        
+        buttons = new Button[] {back, main, add, delete, edit, save};
     }
     
     @Override
-    public void set(String type, String title, String description, ArrayList<String> subItems) {
+    public void set(String type, String title, String description, 
+            ArrayList<String> subItems) {
         this.type = type;
         this.title = title;
         this.description = description;
@@ -140,8 +150,21 @@ public class GUIFactoryTypeA implements IGUIFactory {
 
         @Override
         public void handle(ActionEvent arg0) {
-            // TODO Auto-generated method stub
+            Object o = arg0.getSource();
             
+            if(o == back) {
+                listener.inputNotify(IControllerListenerTypeA.BACK);
+            } else if(o == main) {
+                listener.inputNotify(IControllerListenerTypeA.MAIN);
+            } else if(o == add) {
+                listener.inputNotify(IControllerListenerTypeA.ADD);
+            } else if(o == delete) {
+                listener.inputNotify(IControllerListenerTypeA.DELETE);
+            } else if(o == edit) {
+                listener.inputNotify(IControllerListenerTypeA.EDIT);
+            } else if(o == save) {
+                listener.inputNotify(IControllerListenerTypeA.SAVE);
+            }
         }
         
     };

@@ -12,6 +12,7 @@ public interface IControllerListenerTypeA {
     public final static int BACK = 5;
     public final static int MAIN = 6;
     
+    public final static int ADD_LIST_ITEM = -1;
     public final static int ARG_LIST = 0;
     public final static int IDEA_LIST = 1;
     public final static int NOTE_LIST = 2;
