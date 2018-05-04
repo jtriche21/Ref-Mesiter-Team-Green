@@ -21,6 +21,7 @@ public class GUIFactoryTypeC extends GUIFactoryTypeA implements IGUIFactory{
         super(listener, type, title, description, subItems);
         
         this.rating = rating;
+        setPicture();
     }
     
     @Override
@@ -30,6 +31,14 @@ public class GUIFactoryTypeC extends GUIFactoryTypeA implements IGUIFactory{
         centerLayout.getChildren().add(super.makeCenterList().get(0));
         
         ratingImg = new ImageView();
+        
+        centerLayout.getChildren().add(ratingImg);
+        
+        nodeList.add(centerLayout);
+        return nodeList;
+    }
+    
+    private void setPicture() {
         Image image;
         
         if(rating == ArgumentRatingModel.ZERO) 
@@ -43,10 +52,6 @@ public class GUIFactoryTypeC extends GUIFactoryTypeA implements IGUIFactory{
         else
             image = new Image(GUITester.class.getResourceAsStream("ratingNeutral.png"));
         ratingImg.setImage(image);
-        centerLayout.getChildren().add(ratingImg);
-        
-        nodeList.add(centerLayout);
-        return nodeList;
     }
 
 }
